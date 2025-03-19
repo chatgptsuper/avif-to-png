@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AVIF to PNG | Free Converter</title>
+    <title>AVIF para PNG | Conversor Gratuito</title>
     <meta name="description"
-        content="Convert AVIF images to PNG format easily with our free online tool. No registration required.">
+        content="Converta imagens AVIF para o formato PNG facilmente com nossa ferramenta online gratuita. Sem necessidade de registro.">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../styles.css">
     <script>
         tailwind.config = {
             theme: {
@@ -68,16 +68,16 @@
             <!-- 修改导航链接，确保一致性 -->
             <nav>
                 <ul class="flex space-x-6">
-                    <li><a href="/" class="hover:text-primary transition-colors" title="AVIF to PNG">Home</a>
+                    <li><a href="/pt" class="hover:text-primary transition-colors" title="AVIF para PNG">Início</a>
                     </li>
-                    <li><a href="#about" class="hover:text-primary transition-colors" title="About Us">About</a></li>
-                    <li><a href="#faq" class="hover:text-primary transition-colors" title="FAQ">FAQ</a>
+                    <li><a href="#about" class="hover:text-primary transition-colors" title="Sobre Nós">Sobre</a></li>
+                    <li><a href="#faq" class="hover:text-primary transition-colors" title="Perguntas Frequentes">FAQ</a>
                     </li>
-                    <li><a href="contact.html" class="hover:text-primary transition-colors"
-                            title="Contact Us">Contact</a></li>
+                    <li><a href="/pt/contact.html" class="hover:text-primary transition-colors"
+                            title="Contate-nos">Contato</a></li>
                     <li class="relative group">
-                        <button class="hover:text-primary transition-colors flex items-center" title="Choose Language">
-                            <i class="fas fa-globe mr-1"></i> Language <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        <button class="hover:text-primary transition-colors flex items-center" title="Escolher Idioma">
+                            <i class="fas fa-globe mr-1"></i> Idioma <i class="fas fa-chevron-down ml-1 text-xs"></i>
                         </button>
                         <div
                             class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 hidden group-hover:block z-10 transition-all duration-300 opacity-0 group-hover:opacity-100 invisible group-hover:visible">
@@ -102,7 +102,7 @@
             <div id="error-message" class="hidden mt-4 p-4 bg-red-100 text-red-700 rounded-lg">
                 <div class="flex items-center">
                     <i class="fas fa-exclamation-circle mr-2"></i>
-                    <p id="error-text">Error processing file. Please ensure you are uploading a valid AVIF file.</p>
+                    <p id="error-text">Erro ao processar arquivo. Por favor, certifique-se de que está enviando um arquivo AVIF válido.</p>
                 </div>
             </div>
         </div>
@@ -111,14 +111,14 @@
     <!-- Hero Section -->
     <section class="py-16 md:py-24 px-6 md:px-12 lg:px-24 bg-gradient-to-b from-secondary to-white">
         <div class="container mx-auto text-center">
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">AVIF to PNG | Free Converter</h1>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">AVIF para PNG | Conversor Gratuito</h1>
             <p class="text-xl md:text-2xl text-gray-600 mb-10 max-w-3xl mx-auto">
-                A simple, fast, and free online tool to convert your AVIF images to PNG format.
+                Uma ferramenta online simples, rápida e gratuita para converter suas imagens AVIF para o formato PNG.
             </p>
             <a href="#converter"
                 class="bg-primary text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-blue-600 transition-colors shadow-lg btn-hover-effect"
-                title="Start Converting">
-                Start Converting
+                title="Começar a Converter">
+                Começar a Converter
             </a>
         </div>
     </section>
@@ -127,28 +127,27 @@
     <section id="converter" class="py-16 md:py-24 px-6 md:px-12 lg:px-24">
         <div class="container mx-auto max-w-4xl">
             <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12">
-                <h2 class="text-3xl font-bold mb-8 text-center">Upload Your AVIF File</h2>
+                <h2 class="text-3xl font-bold mb-8 text-center">Envie Seu Arquivo AVIF</h2>
 
                 <!-- Upload Area -->
-                <!-- 上传区域修改 -->
                 <div id="drop-zone" class="drop-zone rounded-xl p-12 text-center cursor-pointer mb-8">
                     <input type="file" id="file-input" accept=".avif" class="hidden" multiple>
                     <div class="mb-4">
                         <i class="fas fa-cloud-upload-alt text-5xl text-gray-400"></i>
                     </div>
-                    <p class="text-lg mb-2">Drag and drop your AVIF files here</p>
-                    <p class="text-gray-500 mb-6">or</p>
+                    <p class="text-lg mb-2">Arraste e solte seus arquivos AVIF aqui</p>
+                    <p class="text-gray-500 mb-6">ou</p>
                     <button id="browse-button"
                         class="bg-primary text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition-colors">
-                        Browse Files
+                        Procurar Arquivos
                     </button>
-                    <p class="text-sm text-gray-500 mt-4">Maximum file size: 20MB per file</p>
+                    <p class="text-sm text-gray-500 mt-4">Tamanho máximo do arquivo: 20MB por arquivo</p>
                 </div>
 
                 <!-- Processing Area (Initially Hidden) -->
                 <div id="processing-area" class="hidden">
                     <div class="mb-6">
-                        <p class="text-lg font-medium mb-2">Converting...</p>
+                        <p class="text-lg font-medium mb-2">Convertendo...</p>
                         <div class="w-full bg-gray-200 rounded-full h-2.5">
                             <div id="progress-bar" class="progress-bar bg-primary h-2.5 rounded-full" style="width: 0%">
                             </div>
@@ -156,7 +155,7 @@
                     </div>
                     <div class="flex items-center">
                         <div class="animate-spin rounded-full h-6 w-6 border-b-2 border-primary mr-3"></div>
-                        <p id="status-text">Processing your image...</p>
+                        <p id="status-text">Processando sua imagem...</p>
                     </div>
                 </div>
 
@@ -169,18 +168,18 @@
                                 <i class="fas fa-check text-green-500"></i>
                             </div>
                             <div>
-                                <h3 class="font-medium" id="conversion-summary">0 files converted</h3>
+                                <h3 class="font-medium" id="conversion-summary">0 arquivos convertidos</h3>
                                 <p class="text-sm text-gray-500" id="total-size">0 KB total</p>
                             </div>
                         </div>
                         <div class="flex space-x-3">
                             <button id="download-all-btn"
                                 class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">
-                                <i class="fas fa-download mr-2"></i>Download All
+                                <i class="fas fa-download mr-2"></i>Baixar Todos
                             </button>
                             <button id="convert-another-btn"
                                 class="border border-primary text-primary px-4 py-2 rounded-lg hover:bg-blue-50 transition-colors">
-                                Convert More
+                                Converter Mais
                             </button>
                         </div>
                     </div>
@@ -192,7 +191,7 @@
 
                     <!-- 预览区域 -->
                     <div class="bg-gray-50 rounded-xl p-4 image-preview-container" id="preview-container">
-                        <p class="text-center text-gray-500 py-4">Select an image to preview</p>
+                        <p class="text-center text-gray-500 py-4">Selecione uma imagem para visualizar</p>
                     </div>
                 </div>
             </div>
@@ -202,7 +201,7 @@
     <!-- Features Section -->
     <section class="py-16 md:py-24 px-6 md:px-12 lg:px-24 bg-secondary">
         <div class="container mx-auto">
-            <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center">Why Choose Our Converter</h2>
+            <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center">Por Que Escolher Nosso Conversor</h2>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Feature 1 -->
@@ -210,9 +209,8 @@
                     <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
                         <i class="fas fa-bolt text-primary text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">Fast Conversion</h3>
-                    <p class="text-gray-600">Convert your AVIF images to PNG format in seconds with our optimized
-                        processing engine.</p>
+                    <h3 class="text-xl font-bold mb-4">Conversão Rápida</h3>
+                    <p class="text-gray-600">Converta suas imagens AVIF para o formato PNG em segundos com nosso motor de processamento otimizado.</p>
                 </div>
 
                 <!-- Feature 2 -->
@@ -220,9 +218,8 @@
                     <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
                         <i class="fas fa-lock text-primary text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">100% Secure</h3>
-                    <p class="text-gray-600">Your files are processed locally in your browser. We never upload your
-                        images to any server.</p>
+                    <h3 class="text-xl font-bold mb-4">100% Seguro</h3>
+                    <p class="text-gray-600">Seus arquivos são processados localmente em seu navegador. Nunca enviamos suas imagens para nenhum servidor.</p>
                 </div>
 
                 <!-- Feature 3 -->
@@ -230,9 +227,8 @@
                     <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
                         <i class="fas fa-image text-primary text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">High Quality</h3>
-                    <p class="text-gray-600">Our converter maintains the highest possible image quality during the
-                        conversion process.</p>
+                    <h3 class="text-xl font-bold mb-4">Alta Qualidade</h3>
+                    <p class="text-gray-600">Nosso conversor mantém a mais alta qualidade de imagem possível durante o processo de conversão.</p>
                 </div>
             </div>
         </div>
@@ -241,32 +237,31 @@
     <!-- How It Works Section -->
     <section class="py-16 md:py-24 px-6 md:px-12 lg:px-24">
         <div class="container mx-auto max-w-4xl">
-            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">How to Convert AVIF to PNG</h2>
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">Como Converter AVIF para PNG</h2>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="bg-white p-6 rounded-xl shadow-md text-center">
                     <div class="bg-blue-50 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
                         <span class="text-primary font-bold text-xl">1</span>
                     </div>
-                    <h3 class="font-bold mb-2">Upload</h3>
-                    <p class="text-gray-600">Drag and drop your AVIF files or click to browse your device</p>
+                    <h3 class="font-bold mb-2">Enviar</h3>
+                    <p class="text-gray-600">Arraste e solte seus arquivos AVIF ou clique para navegar em seu dispositivo</p>
                 </div>
 
                 <div class="bg-white p-6 rounded-xl shadow-md text-center">
                     <div class="bg-blue-50 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
                         <span class="text-primary font-bold text-xl">2</span>
                     </div>
-                    <h3 class="font-bold mb-2">Convert</h3>
-                    <p class="text-gray-600">Our AVIF to PNG converter processes your files instantly in your browser
-                    </p>
+                    <h3 class="font-bold mb-2">Converter</h3>
+                    <p class="text-gray-600">Nosso conversor de AVIF para PNG processa seus arquivos instantaneamente em seu navegador</p>
                 </div>
 
                 <div class="bg-white p-6 rounded-xl shadow-md text-center">
                     <div class="bg-blue-50 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
                         <span class="text-primary font-bold text-xl">3</span>
                     </div>
-                    <h3 class="font-bold mb-2">Download</h3>
-                    <p class="text-gray-600">Download your converted PNG files individually or all at once</p>
+                    <h3 class="font-bold mb-2">Baixar</h3>
+                    <p class="text-gray-600">Baixe seus arquivos PNG convertidos individualmente ou todos de uma vez</p>
                 </div>
             </div>
         </div>
@@ -275,31 +270,56 @@
     <!-- Benefits Section -->
     <section class="py-16 md:py-24 px-6 md:px-12 lg:px-24 bg-gray-50">
         <div class="container mx-auto max-w-4xl">
-            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">Benefits of Converting AVIF to PNG</h2>
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">Benefícios de Converter AVIF para PNG</h2>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="bg-white p-8 rounded-xl shadow-md">
-                    <h3 class="text-xl font-bold mb-4 text-primary">Wider Compatibility</h3>
-                    <p class="text-gray-600">While AVIF is newer and more efficient, PNG is supported by virtually all
-                        software and platforms. Converting from AVIF to PNG ensures your images work everywhere.</p>
+                    <h3 class="text-xl font-bold mb-4 text-primary">Maior Compatibilidade</h3>
+                    <p class="text-gray-600">Embora o AVIF seja mais novo e mais eficiente, o PNG é suportado por praticamente todos os softwares e plataformas. Converter de AVIF para PNG garante que suas imagens funcionem em qualquer lugar.</p>
                 </div>
 
                 <div class="bg-white p-8 rounded-xl shadow-md">
-                    <h3 class="text-xl font-bold mb-4 text-primary">Lossless Quality</h3>
-                    <p class="text-gray-600">Our AVIF to PNG converter maintains image quality during conversion,
-                        ensuring your visuals remain crisp and clear.</p>
+                    <h3 class="text-xl font-bold mb-4 text-primary">Qualidade Sem Perdas</h3>
+                    <p class="text-gray-600">Nosso conversor de AVIF para PNG mantém a qualidade da imagem durante a conversão, garantindo que seus visuais permaneçam nítidos e claros.</p>
                 </div>
 
                 <div class="bg-white p-8 rounded-xl shadow-md">
-                    <h3 class="text-xl font-bold mb-4 text-primary">Transparency Support</h3>
-                    <p class="text-gray-600">PNG format supports transparency, making it ideal for logos, icons, and
-                        images that need to be placed on different backgrounds.</p>
+                    <h3 class="text-xl font-bold mb-4 text-primary">Suporte à Transparência</h3>
+                    <p class="text-gray-600">O formato PNG suporta transparência, tornando-o ideal para logos, ícones e imagens que precisam ser colocadas em diferentes fundos.</p>
                 </div>
 
                 <div class="bg-white p-8 rounded-xl shadow-md">
-                    <h3 class="text-xl font-bold mb-4 text-primary">Easy Editing</h3>
-                    <p class="text-gray-600">PNG files are easier to edit in most graphic design software compared to
-                        AVIF files, giving you more flexibility with your images.</p>
+                    <h3 class="text-xl font-bold mb-4 text-primary">Fácil Edição</h3>
+                    <p class="text-gray-600">Os arquivos PNG são mais fáceis de editar na maioria dos softwares de design gráfico em comparação com os arquivos AVIF, dando-lhe mais flexibilidade com suas imagens.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases Section -->
+    <section class="py-16 md:py-24 px-6 md:px-12 lg:px-24">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">Quando Usar um Conversor de AVIF para PNG</h2>
+
+            <div class="space-y-6">
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <h3 class="text-xl font-bold mb-2">Desenvolvimento de Sites</h3>
+                    <p class="text-gray-600">Converta AVIF para PNG ao construir sites que precisam suportar navegadores mais antigos ou quando você precisa de imagens com fundo transparente.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <h3 class="text-xl font-bold mb-2">Design Gráfico</h3>
+                    <p class="text-gray-600">Use nosso conversor de AVIF para PNG quando trabalhar com software de design que não suporta o formato AVIF, mas requer imagens de alta qualidade.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <h3 class="text-xl font-bold mb-2">E-commerce</h3>
+                    <p class="text-gray-600">Converta de AVIF para PNG para imagens de produtos que precisam ser exibidas consistentemente em várias plataformas e dispositivos.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <h3 class="text-xl font-bold mb-2">Redes Sociais</h3>
+                    <p class="text-gray-600">Nosso conversor de AVIF para PNG ajuda a preparar imagens para plataformas de mídia social que ainda não suportam totalmente o formato AVIF.</p>
                 </div>
             </div>
         </div>
@@ -341,64 +361,61 @@
     <!-- Comparison Section -->
     <section class="py-16 md:py-24 px-6 md:px-12 lg:px-24 bg-gray-50">
         <div class="container mx-auto max-w-4xl">
-            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">AVIF vs PNG: Format Comparison</h2>
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">AVIF vs PNG: Comparação de Formatos</h2>
 
             <div class="overflow-hidden bg-white rounded-xl shadow-md">
                 <table class="w-full">
                     <thead class="bg-primary text-white">
                         <tr>
-                            <th class="py-4 px-6 text-left">Feature</th>
+                            <th class="py-4 px-6 text-left">Característica</th>
                             <th class="py-4 px-6 text-center">AVIF</th>
                             <th class="py-4 px-6 text-center">PNG</th>
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-gray-200">
                         <tr>
-                            <td class="py-4 px-6 font-medium">File Size</td>
-                            <td class="py-4 px-6 text-center">Smaller</td>
-                            <td class="py-4 px-6 text-center">Larger</td>
+                            <td class="py-4 px-6 font-medium">Tamanho do Arquivo</td>
+                            <td class="py-4 px-6 text-center">Menor</td>
+                            <td class="py-4 px-6 text-center">Maior</td>
                         </tr>
                         <tr>
-                            <td class="py-4 px-6 font-medium">Compatibility</td>
-                            <td class="py-4 px-6 text-center">Limited</td>
-                            <td class="py-4 px-6 text-center">Excellent</td>
+                            <td class="py-4 px-6 font-medium">Compatibilidade</td>
+                            <td class="py-4 px-6 text-center">Limitada</td>
+                            <td class="py-4 px-6 text-center">Excelente</td>
                         </tr>
                         <tr>
-                            <td class="py-4 px-6 font-medium">Transparency</td>
-                            <td class="py-4 px-6 text-center">Supported</td>
-                            <td class="py-4 px-6 text-center">Fully Supported</td>
+                            <td class="py-4 px-6 font-medium">Transparência</td>
+                            <td class="py-4 px-6 text-center">Suportada</td>
+                            <td class="py-4 px-6 text-center">Totalmente Suportada</td>
                         </tr>
                         <tr>
-                            <td class="py-4 px-6 font-medium">Image Quality</td>
-                            <td class="py-4 px-6 text-center">High at small sizes</td>
-                            <td class="py-4 px-6 text-center">Lossless</td>
+                            <td class="py-4 px-6 font-medium">Qualidade da Imagem</td>
+                            <td class="py-4 px-6 text-center">Alta em tamanhos pequenos</td>
+                            <td class="py-4 px-6 text-center">Sem perdas</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-            <p class="text-center mt-6 text-gray-600">Our converter AVIF to PNG helps you get the best of both worlds -
-                the space efficiency of AVIF and the compatibility of PNG.</p>
+            <p class="text-center mt-6 text-gray-600">Nosso conversor de AVIF para PNG ajuda você a obter o melhor dos dois mundos - a eficiência de espaço do AVIF e a compatibilidade do PNG.</p>
         </div>
     </section>
 
     <!-- FAQ Section -->
     <section id="faq" class="py-16 md:py-24 px-6 md:px-12 lg:px-24">
         <div class="container mx-auto max-w-4xl">
-            <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center">Frequently Asked Questions</h2>
+            <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center">Perguntas Frequentes</h2>
 
             <div class="space-y-6">
                 <!-- FAQ Item 1 -->
                 <div class="bg-white rounded-xl shadow-md overflow-hidden">
                     <button class="faq-toggle w-full text-left p-6 focus:outline-none">
                         <div class="flex justify-between items-center">
-                            <h3 class="text-xl font-medium">What is an AVIF file?</h3>
+                            <h3 class="text-xl font-medium">O que é um arquivo AVIF?</h3>
                             <i class="fas fa-chevron-down text-gray-400 transition-transform"></i>
                         </div>
                     </button>
                     <div class="faq-content hidden px-6 pb-6">
-                        <p class="text-gray-600">AVIF (AV1 Image File Format) is a modern image format that offers
-                            significant file size reduction compared to JPEG, PNG, and WebP, while maintaining high
-                            visual quality. It's based on the AV1 video codec.</p>
+                        <p class="text-gray-600">AVIF (AV1 Image File Format) é um formato de imagem moderno que oferece redução significativa de tamanho de arquivo em comparação com JPEG, PNG e WebP, mantendo alta qualidade visual. É baseado no codec de vídeo AV1.</p>
                     </div>
                 </div>
 
@@ -406,14 +423,12 @@
                 <div class="bg-white rounded-xl shadow-md overflow-hidden">
                     <button class="faq-toggle w-full text-left p-6 focus:outline-none">
                         <div class="flex justify-between items-center">
-                            <h3 class="text-xl font-medium">Why convert AVIF to PNG?</h3>
+                            <h3 class="text-xl font-medium">Por que converter AVIF para PNG?</h3>
                             <i class="fas fa-chevron-down text-gray-400 transition-transform"></i>
                         </div>
                     </button>
                     <div class="faq-content hidden px-6 pb-6">
-                        <p class="text-gray-600">While AVIF offers better compression, PNG is more widely supported
-                            across applications and platforms. Converting to PNG ensures compatibility with software
-                            that doesn't yet support the newer AVIF format.</p>
+                        <p class="text-gray-600">Embora o AVIF ofereça melhor compressão, o PNG é mais amplamente suportado em aplicativos e plataformas. Converter para PNG garante compatibilidade com softwares que ainda não suportam o formato AVIF mais recente.</p>
                     </div>
                 </div>
 
@@ -421,13 +436,12 @@
                 <div class="bg-white rounded-xl shadow-md overflow-hidden">
                     <button class="faq-toggle w-full text-left p-6 focus:outline-none">
                         <div class="flex justify-between items-center">
-                            <h3 class="text-xl font-medium">Is there a file size limit?</h3>
+                            <h3 class="text-xl font-medium">Existe um limite de tamanho de arquivo?</h3>
                             <i class="fas fa-chevron-down text-gray-400 transition-transform"></i>
                         </div>
                     </button>
                     <div class="faq-content hidden px-6 pb-6">
-                        <p class="text-gray-600">Yes, the maximum file size is 20MB. This limit helps ensure optimal
-                            performance since all processing happens in your browser.</p>
+                        <p class="text-gray-600">Sim, o tamanho máximo do arquivo é 20MB. Este limite ajuda a garantir um desempenho ideal, já que todo o processamento acontece em seu navegador.</p>
                     </div>
                 </div>
 
@@ -435,13 +449,12 @@
                 <div class="bg-white rounded-xl shadow-md overflow-hidden">
                     <button class="faq-toggle w-full text-left p-6 focus:outline-none">
                         <div class="flex justify-between items-center">
-                            <h3 class="text-xl font-medium">Is my data private?</h3>
+                            <h3 class="text-xl font-medium">Meus dados são privados?</h3>
                             <i class="fas fa-chevron-down text-gray-400 transition-transform"></i>
                         </div>
                     </button>
                     <div class="faq-content hidden px-6 pb-6">
-                        <p class="text-gray-600">Absolutely. All conversion happens locally in your browser. Your images
-                            are never uploaded to any server, ensuring complete privacy and security.</p>
+                        <p class="text-gray-600">Absolutamente. Toda a conversão acontece localmente em seu navegador. Suas imagens nunca são enviadas para nenhum servidor, garantindo total privacidade e segurança.</p>
                     </div>
                 </div>
             </div>
@@ -451,14 +464,11 @@
     <!-- About Section -->
     <section id="about" class="py-16 md:py-24 px-6 md:px-12 lg:px-24 bg-secondary">
         <div class="container mx-auto max-w-4xl text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-8">About AVIFtoPNG</h2>
+            <h2 class="text-3xl md:text-4xl font-bold mb-8">Sobre o AVIFtoPNG</h2>
             <p class="text-lg text-gray-600 mb-10">
-                AVIFtoPNG is a free online tool designed to make image format conversion simple and accessible to
-                everyone.
-                We built this tool to solve the compatibility issues that arise when working with newer image formats
-                like AVIF.
-                Our mission is to provide fast, secure, and high-quality image conversion without any technical
-                barriers.
+                O AVIFtoPNG é uma ferramenta online gratuita projetada para tornar a conversão de formato de imagem simples e acessível a todos.
+                Desenvolvemos esta ferramenta para resolver os problemas de compatibilidade que surgem ao trabalhar com formatos de imagem mais recentes como o AVIF.
+                Nossa missão é fornecer conversão de imagens rápida, segura e de alta qualidade sem barreiras técnicas.
             </p>
         </div>
     </section>
@@ -468,17 +478,16 @@
         <div class="container mx-auto">
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="mb-6 md:mb-0">
-                    <a href="/" class="text-xl font-bold text-primary mb-2 inline-block"
-                        title="AVIF to PNG">AVIFtoPNG</a>
-                    <p class="text-gray-400 text-sm">© AVIFtoPNG. All rights reserved.</p>
+                    <a href="/pt" class="text-xl font-bold text-primary mb-2 inline-block">AVIFtoPNG</a>
+                    <p class="text-gray-400 text-sm">© 2025 AVIFtoPNG. Todos os direitos reservados.</p>
                 </div>
 
                 <!-- 页面导航链接 -->
-                <div class="flex justify-center space-x-4">
-                    <a href="privacy.html" class="text-primary hover:underline" title="Privacy Plicy">Privacy Policy</a>
-                    <a href="terms.html" class="text-primary hover:underline" title="Terms of Service">Terms of
-                        Service</a>
-                    <a href="contact.html" class="text-primary hover:underline" title="Contact Us">Contact Us</a>
+                <div class="flex flex-wrap justify-center space-x-4 mb-6 md:mb-0">
+                    <a href="/pt" class="text-gray-400 hover:text-white transition-colors">Início</a>
+                    <a href="/pt/contact.html" class="text-gray-400 hover:text-white transition-colors">Política de Privacidade</a>
+                    <a href="/pt/contact.html" class="text-gray-400 hover:text-white transition-colors">Termos de Serviço</a>
+                    <a href="/pt/contact.html" class="text-gray-400 hover:text-white transition-colors">Contate-nos</a>
                 </div>
 
                 <!-- Social Media Sharing -->
@@ -487,27 +496,27 @@
                         <a href="https://www.facebook.com/sharer/sharer.php?u=https://aviftopng.top" target="_blank"
                             rel="noopener noreferrer"
                             class="bg-[#1877F2] hover:bg-[#166fe5] text-white text-xs px-3 py-1 rounded-full transition-colors inline-flex items-center">
-                            <i class="fab fa-facebook-f mr-1"></i> Share
+                            <i class="fab fa-facebook-f mr-1"></i> Compartilhar
                         </a>
-                        <a href="https://twitter.com/intent/tweet?text=Convert%20AVIF%20to%20PNG%20instantly%20with%20this%20free%20online%20tool!&url=https://aviftopng.top"
+                        <a href="https://twitter.com/intent/tweet?text=Converta%20AVIF%20para%20PNG%20instantaneamente%20com%20esta%20ferramenta%20online%20gratuita!&url=https://aviftopng.top"
                             target="_blank" rel="noopener noreferrer"
                             class="bg-[#1DA1F2] hover:bg-[#1a8cd8] text-white text-xs px-3 py-1 rounded-full transition-colors inline-flex items-center">
-                            <i class="fab fa-twitter mr-1"></i> Tweet
+                            <i class="fab fa-twitter mr-1"></i> Tweetar
                         </a>
-                        <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://aviftopng.top&title=Free%20AVIF%20to%20PNG%20Converter"
+                        <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://aviftopng.top&title=Conversor%20Gratuito%20de%20AVIF%20para%20PNG"
                             target="_blank" rel="noopener noreferrer"
                             class="bg-[#0A66C2] hover:bg-[#094ea0] text-white text-xs px-3 py-1 rounded-full transition-colors inline-flex items-center">
-                            <i class="fab fa-linkedin-in mr-1"></i> Share
+                            <i class="fab fa-linkedin-in mr-1"></i> Compartilhar
                         </a>
-                        <a href="https://pinterest.com/pin/create/button/?url=https://aviftopng.top&description=Free%20AVIF%20to%20PNG%20Converter"
+                        <a href="https://pinterest.com/pin/create/button/?url=https://aviftopng.top&description=Conversor%20Gratuito%20de%20AVIF%20para%20PNG"
                             target="_blank" rel="noopener noreferrer"
                             class="bg-[#E60023] hover:bg-[#cc0000] text-white text-xs px-3 py-1 rounded-full transition-colors inline-flex items-center">
                             <i class="fab fa-pinterest-p mr-1"></i> Pin
                         </a>
-                        <a href="https://api.whatsapp.com/send?text=Check%20out%20this%20free%20AVIF%20to%20PNG%20converter:%20https://aviftopng.top"
+                        <a href="https://api.whatsapp.com/send?text=Confira%20este%20conversor%20gratuito%20de%20AVIF%20para%20PNG:%20https://aviftopng.top"
                             target="_blank" rel="noopener noreferrer"
                             class="bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs px-3 py-1 rounded-full transition-colors inline-flex items-center">
-                            <i class="fab fa-whatsapp mr-1"></i> Share
+                            <i class="fab fa-whatsapp mr-1"></i> Compartilhar
                         </a>
                     </div>
                 </div>
@@ -516,8 +525,8 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="script.js"></script>
-    <script src="share.js"></script>
+    <script src="../script.js"></script>
+    <script src="../share.js"></script>
 </body>
 
 </html>

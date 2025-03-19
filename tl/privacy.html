@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patakaran sa Privacy | AVIF to PNG Converter</title>
+    <meta name="description"
+        content="Patakaran sa Privacy para sa AVIF to PNG Converter - Alamin kung paano namin pinoprotektahan ang iyong data at privacy.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0077ED',
+                        secondary: '#F5F5F7',
+                        dark: '#1D1D1F',
+                    },
+                    fontFamily: {
+                        sans: ['SF Pro Display', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-white font-sans text-dark">
+    <!-- Header -->
+    <header class="bg-secondary py-4 px-6 md:px-12 lg:px-24">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="/tl" class="text-2xl font-bold text-primary">AVIFtoPNG</a>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="/tl" class="hover:text-primary transition-colors">Home</a></li>
+                    <li class="relative group">
+                        <button class="hover:text-primary transition-colors flex items-center" title="Choose Language">
+                            <i class="fas fa-globe mr-1"></i> Wika <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </button>
+                        <div
+                            class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 hidden group-hover:block z-10 transition-all duration-300 opacity-0 group-hover:opacity-100 invisible group-hover:visible">
+                            <!-- 添加一个透明的桥接元素，扩大悬停区域 -->
+                            <div class="absolute -top-2 left-0 right-0 h-2 bg-transparent"></div>
+                            <a href="/privacy.html" class="block px-4 py-2 hover:bg-gray-100">English</a>
+                            <a href="/hi/privacy.html" class="block px-4 py-2 hover:bg-gray-100">हिन्दी</a>
+                            <a href="/pt/privacy.html" class="block px-4 py-2 hover:bg-gray-100">Português</a>
+                            <a href="/id/privacy.html" class="block px-4 py-2 hover:bg-gray-100">Bahasa Indonesia</a>
+                            <a href="/tl/privacy.html" class="block px-4 py-2 hover:bg-gray-100">Filipino</a>
+                            <a href="/fr/privacy.html" class="block px-4 py-2 hover:bg-gray-100">Français</a>
+                            <a href="/zh-cn/privacy.html" class="block px-4 py-2 hover:bg-gray-100">简体中文</a>
+                            <a href="/zh-tw/privacy.html" class="block px-4 py-2 hover:bg-gray-100">繁體中文</a>
+                            <a href="/ur/privacy.html" class="block px-4 py-2 hover:bg-gray-100">اردو</a>
+                            <a href="/tr/privacy.html" class="block px-4 py-2 hover:bg-gray-100">Türkçe</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <section class="py-12 md:py-16 px-6 md:px-12 lg:px-24">
+        <div class="container mx-auto max-w-4xl">
+            <h1 class="text-3xl md:text-4xl font-bold mb-8 text-center">Patakaran sa Privacy</h1>
+
+            <div class="bg-white rounded-2xl shadow-lg p-8 md:p-12">
+                <div class="prose prose-lg max-w-none">
+                    <p class="text-gray-600 mb-6">Huling na-update: Enero 1, 2025</p>
+
+                    <h2 class="text-2xl font-bold mt-8 mb-4">Panimula</h2>
+                    <p>Maligayang pagdating sa AVIFtoPNG ("kami," "aming," o "namin"). Iginagalang namin ang iyong privacy at nakatuon kami sa pagprotekta ng iyong personal na data. Ang patakaran sa privacy na ito ay magbibigay-alam sa iyo tungkol sa kung paano namin hinahawakan ang iyong data kapag binibisita mo ang aming website at sasabihin sa iyo ang tungkol sa iyong mga karapatan sa privacy.</p>
+
+                    <h2 class="text-2xl font-bold mt-8 mb-4">Ang Data na Aming Pinoproseso</h2>
+                    <p>Ang aming serbisyo ay idinisenyo na may privacy sa isip. Kapag ginagamit mo ang aming AVIF to PNG converter:</p>
+                    <ul class="list-disc pl-6 mb-6 space-y-2">
+                        <li>Lahat ng pagproseso ng imahe ay nangyayari nang lokal sa iyong browser</li>
+                        <li>Ang iyong mga imahe ay hindi kailanman ina-upload sa aming mga server</li>
+                        <li>Hindi kami nag-iimbak o may access sa iyong mga na-convert na imahe</li>
+                        <li>Walang kinakailangang mga account ng user o pagpaparehistro</li>
+                    </ul>
+
+                    <h2 class="text-2xl font-bold mt-8 mb-4">Data ng Paggamit</h2>
+                    <p>Nangongolekta kami ng anonymous na data ng paggamit upang tulungan kaming mapabuti ang aming serbisyo. Maaaring kabilang dito ang:</p>
+                    <ul class="list-disc pl-6 mb-6 space-y-2">
+                        <li>Uri at bersyon ng browser</li>
+                        <li>Operating system</li>
+                        <li>Referring website</li>
+                        <li>Oras at petsa ng iyong pagbisita</li>
+                        <li>Mga pahinang tiningnan</li>
+                        <li>Anonymous na istatistika ng paggamit (hal., bilang ng mga conversion)</li>
+                    </ul>
+                    <p>Ang data na ito ay kinokolekta gamit ang cookies at katulad na mga teknolohiya. Hindi ito kasama ang anumang personal na impormasyong makakapagpakilala.</p>
+
+                    <h2 class="text-2xl font-bold mt-8 mb-4">Cookies</h2>
+                    <p>Gumagamit kami ng mahahalagang cookies upang matiyak ang wastong paggana ng aming website. Gumagamit din kami ng analytics cookies upang maunawaan kung paano nakikipag-ugnayan ang mga bisita sa aming website. Maaari mong kontrolin ang cookies sa pamamagitan ng iyong mga setting ng browser.</p>
+
+                    <h2 class="text-2xl font-bold mt-8 mb-4">Mga Serbisyo ng Third-Party</h2>
+                    <p>Gumagamit kami ng mga sumusunod na serbisyo ng third-party:</p>
+                    <ul class="list-disc pl-6 mb-6 space-y-2">
+                        <li>Google Analytics: Para sa pagsusuri ng paggamit ng website</li>
+                        <li>Mga serbisyo ng CDN: Upang makapaghatid ng static na nilalaman nang mahusay</li>
+                    </ul>
+                    <p>Ang mga serbisyong ito ay maaaring mangolekta ng data gaya ng inilalarawan sa kani-kanilang mga patakaran sa privacy.</p>
+
+                    <h2 class="text-2xl font-bold mt-8 mb-4">Seguridad ng Data</h2>
+                    <p>Nagpatupad kami ng mga naaangkop na hakbang sa seguridad upang maiwasan ang iyong data na aksidenteng mawala, magamit, o ma-access sa hindi awtorisadong paraan. Dahil ang iyong mga imahe ay pinoproseso nang lokal sa iyong browser, hindi sila kailanman nalalantad sa mga panlabas na panganib sa seguridad sa aming bahagi.</p>
+
+                    <h2 class="text-2xl font-bold mt-8 mb-4">Ang Iyong Mga Karapatan</h2>
+                    <p>Depende sa iyong lokasyon, maaaring mayroon kang ilang mga karapatan tungkol sa iyong personal na data, kabilang ang:</p>
+                    <ul class="list-disc pl-6 mb-6 space-y-2">
+                        <li>Ang karapatang ma-access</li>
+                        <li>Ang karapatang itama</li>
+                        <li>Ang karapatang burahin</li>
+                        <li>Ang karapatang limitahan ang pagproseso</li>
+                        <li>Ang karapatang sa portability ng data</li>
+                        <li>Ang karapatang tumutol</li>
+                    </ul>
+                    <p>Upang gamitin ang mga karapatang ito, mangyaring makipag-ugnayan sa amin gamit ang mga detalyeng ibinigay sa ibaba.</p>
+
+                    <h2 class="text-2xl font-bold mt-8 mb-4">Mga Pagbabago sa Patakarang ito sa Privacy</h2>
+                    <p>Maaari naming i-update ang aming patakaran sa privacy paminsan-minsan. Aabisuhan ka namin ng anumang mga pagbabago sa pamamagitan ng pag-post ng bagong patakaran sa privacy sa pahinang ito at pag-update ng petsa ng "Huling na-update".</p>
+
+                    <h2 class="text-2xl font-bold mt-8 mb-4">Makipag-ugnay sa Amin</h2>
+                    <p>Kung mayroon kang anumang mga katanungan tungkol sa patakarang ito sa privacy o sa aming mga kasanayan sa data, mangyaring makipag-ugnayan sa amin sa:</p>
+                    <p class="mb-6">Email: support@aviftopng.top</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-8 px-6 md:px-12 lg:px-24">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <a href="/tl" class="text-xl font-bold text-primary mb-2 inline-block">AVIFtoPNG</a>
+                    <p class="text-gray-400 text-sm">© 2025 AVIFtoPNG. Nakalaan ang lahat ng karapatan.</p>
+                </div>
+
+                <!-- 页面导航链接 -->
+                <div class="flex flex-wrap justify-center space-x-4 mb-6 md:mb-0">
+                    <a href="/tl" class="text-gray-400 hover:text-white transition-colors">Home</a>
+                    <a href="/tl/privacy.html" class="text-gray-400 hover:text-white transition-colors">Patakaran sa
+                        Privacy</a>
+                    <a href="/tl/terms.html" class="text-gray-400 hover:text-white transition-colors">Mga Tuntunin ng
+                        Serbisyo</a>
+                    <a href="/tl/contact.html" class="text-gray-400 hover:text-white transition-colors">Makipag-ugnay sa
+                        Amin</a>
+                </div>
+
+                <!-- Social Media Sharing -->
+                <div class="flex flex-col items-center md:items-end">
+                    <div class="flex flex-wrap gap-2">
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=https://aviftopng.top" target="_blank"
+                            rel="noopener noreferrer"
+                            class="bg-[#1877F2] hover:bg-[#166fe5] text-white text-xs px-3 py-1 rounded-full transition-colors inline-flex items-center">
+                            <i class="fab fa-facebook-f mr-1"></i> I-share
+                        </a>
+                        <a href="https://twitter.com/intent/tweet?text=I-convert%20ang%20AVIF%20sa%20PNG%20kaagad%20gamit%20ang%20libreng%20online%20tool%20na%20ito!&url=https://aviftopng.top"
+                            target="_blank" rel="noopener noreferrer"
+                            class="bg-[#1DA1F2] hover:bg-[#1a8cd8] text-white text-xs px-3 py-1 rounded-full transition-colors inline-flex items-center">
+                            <i class="fab fa-twitter mr-1"></i> I-tweet
+                        </a>
+                        <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://aviftopng.top&title=Libreng%20AVIF%20sa%20PNG%20Converter"
+                            target="_blank" rel="noopener noreferrer"
+                            class="bg-[#0A66C2] hover:bg-[#094ea0] text-white text-xs px-3 py-1 rounded-full transition-colors inline-flex items-center">
+                            <i class="fab fa-linkedin-in mr-1"></i> I-share
+                        </a>
+                        <a href="https://pinterest.com/pin/create/button/?url=https://aviftopng.top&description=Libreng%20AVIF%20sa%20PNG%20Converter"
+                            target="_blank" rel="noopener noreferrer"
+                            class="bg-[#E60023] hover:bg-[#cc0000] text-white text-xs px-3 py-1 rounded-full transition-colors inline-flex items-center">
+                            <i class="fab fa-pinterest-p mr-1"></i> I-pin
+                        </a>
+                        <a href="https://api.whatsapp.com/send?text=Tingnan%20ang%20libreng%20AVIF%20sa%20PNG%20converter%20na%20ito:%20https://aviftopng.top"
+                            target="_blank" rel="noopener noreferrer"
+                            class="bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs px-3 py-1 rounded-full transition-colors inline-flex items-center">
+                            <i class="fab fa-whatsapp mr-1"></i> I-share
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

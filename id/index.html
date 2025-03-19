@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AVIF to PNG | Free Converter</title>
+    <title>AVIF ke PNG | Konverter Gratis</title>
     <meta name="description"
-        content="Convert AVIF images to PNG format easily with our free online tool. No registration required.">
+        content="Konversikan gambar AVIF ke format PNG dengan mudah menggunakan alat online gratis kami. Tidak perlu registrasi.">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../styles.css">
     <script>
         tailwind.config = {
             theme: {
@@ -65,23 +65,22 @@
     <header class="bg-secondary py-4 px-6 md:px-12 lg:px-24">
         <div class="container mx-auto flex justify-between items-center">
             <div class="text-2xl font-bold text-primary">AVIFtoPNG</div>
-            <!-- 修改导航链接，确保一致性 -->
             <nav>
                 <ul class="flex space-x-6">
-                    <li><a href="/" class="hover:text-primary transition-colors" title="AVIF to PNG">Home</a>
+                    <li><a href="/" class="hover:text-primary transition-colors" title="AVIF ke PNG">Beranda</a>
                     </li>
-                    <li><a href="#about" class="hover:text-primary transition-colors" title="About Us">About</a></li>
+                    <li><a href="#about" class="hover:text-primary transition-colors" title="Tentang Kami">Tentang</a>
+                    </li>
                     <li><a href="#faq" class="hover:text-primary transition-colors" title="FAQ">FAQ</a>
                     </li>
-                    <li><a href="contact.html" class="hover:text-primary transition-colors"
-                            title="Contact Us">Contact</a></li>
+                    <li><a href="/id/contact.html" class="hover:text-primary transition-colors"
+                            title="Hubungi Kami">Kontak</a></li>
                     <li class="relative group">
-                        <button class="hover:text-primary transition-colors flex items-center" title="Choose Language">
-                            <i class="fas fa-globe mr-1"></i> Language <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        <button class="hover:text-primary transition-colors flex items-center" title="Pilih Bahasa">
+                            <i class="fas fa-globe mr-1"></i> Bahasa <i class="fas fa-chevron-down ml-1 text-xs"></i>
                         </button>
                         <div
                             class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 hidden group-hover:block z-10 transition-all duration-300 opacity-0 group-hover:opacity-100 invisible group-hover:visible">
-                            <!-- 添加一个透明的桥接元素，扩大悬停区域 -->
                             <div class="absolute -top-2 left-0 right-0 h-2 bg-transparent"></div>
                             <a href="/" class="block px-4 py-2 hover:bg-gray-100">English</a>
                             <a href="/hi" class="block px-4 py-2 hover:bg-gray-100">हिन्दी</a>
@@ -98,11 +97,11 @@
                 </ul>
             </nav>
 
-            <!-- 添加错误处理提示 -->
+            <!-- 错误处理提示 -->
             <div id="error-message" class="hidden mt-4 p-4 bg-red-100 text-red-700 rounded-lg">
                 <div class="flex items-center">
                     <i class="fas fa-exclamation-circle mr-2"></i>
-                    <p id="error-text">Error processing file. Please ensure you are uploading a valid AVIF file.</p>
+                    <p id="error-text">Kesalahan memproses file. Pastikan Anda mengunggah file AVIF yang valid.</p>
                 </div>
             </div>
         </div>
@@ -111,14 +110,14 @@
     <!-- Hero Section -->
     <section class="py-16 md:py-24 px-6 md:px-12 lg:px-24 bg-gradient-to-b from-secondary to-white">
         <div class="container mx-auto text-center">
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">AVIF to PNG | Free Converter</h1>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">AVIF ke PNG | Konverter Gratis</h1>
             <p class="text-xl md:text-2xl text-gray-600 mb-10 max-w-3xl mx-auto">
-                A simple, fast, and free online tool to convert your AVIF images to PNG format.
+                Alat online yang sederhana, cepat, dan gratis untuk mengkonversi gambar AVIF Anda ke format PNG.
             </p>
             <a href="#converter"
                 class="bg-primary text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-blue-600 transition-colors shadow-lg btn-hover-effect"
-                title="Start Converting">
-                Start Converting
+                title="Mulai Konversi">
+                Mulai Konversi
             </a>
         </div>
     </section>
@@ -127,28 +126,27 @@
     <section id="converter" class="py-16 md:py-24 px-6 md:px-12 lg:px-24">
         <div class="container mx-auto max-w-4xl">
             <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12">
-                <h2 class="text-3xl font-bold mb-8 text-center">Upload Your AVIF File</h2>
+                <h2 class="text-3xl font-bold mb-8 text-center">Unggah File AVIF Anda</h2>
 
                 <!-- Upload Area -->
-                <!-- 上传区域修改 -->
                 <div id="drop-zone" class="drop-zone rounded-xl p-12 text-center cursor-pointer mb-8">
                     <input type="file" id="file-input" accept=".avif" class="hidden" multiple>
                     <div class="mb-4">
                         <i class="fas fa-cloud-upload-alt text-5xl text-gray-400"></i>
                     </div>
-                    <p class="text-lg mb-2">Drag and drop your AVIF files here</p>
-                    <p class="text-gray-500 mb-6">or</p>
+                    <p class="text-lg mb-2">Seret dan lepaskan file AVIF Anda di sini</p>
+                    <p class="text-gray-500 mb-6">atau</p>
                     <button id="browse-button"
                         class="bg-primary text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition-colors">
-                        Browse Files
+                        Telusuri File
                     </button>
-                    <p class="text-sm text-gray-500 mt-4">Maximum file size: 20MB per file</p>
+                    <p class="text-sm text-gray-500 mt-4">Ukuran file maksimum: 20MB per file</p>
                 </div>
 
                 <!-- Processing Area (Initially Hidden) -->
                 <div id="processing-area" class="hidden">
                     <div class="mb-6">
-                        <p class="text-lg font-medium mb-2">Converting...</p>
+                        <p class="text-lg font-medium mb-2">Mengkonversi...</p>
                         <div class="w-full bg-gray-200 rounded-full h-2.5">
                             <div id="progress-bar" class="progress-bar bg-primary h-2.5 rounded-full" style="width: 0%">
                             </div>
@@ -156,12 +154,11 @@
                     </div>
                     <div class="flex items-center">
                         <div class="animate-spin rounded-full h-6 w-6 border-b-2 border-primary mr-3"></div>
-                        <p id="status-text">Processing your image...</p>
+                        <p id="status-text">Memproses gambar Anda...</p>
                     </div>
                 </div>
 
                 <!-- Result Area (Initially Hidden) -->
-                <!-- 结果区域修改 -->
                 <div id="result-area" class="hidden fade-in">
                     <div class="flex flex-col md:flex-row items-center justify-between bg-gray-50 rounded-xl p-6 mb-6">
                         <div class="flex items-center mb-4 md:mb-0">
@@ -169,18 +166,18 @@
                                 <i class="fas fa-check text-green-500"></i>
                             </div>
                             <div>
-                                <h3 class="font-medium" id="conversion-summary">0 files converted</h3>
+                                <h3 class="font-medium" id="conversion-summary">0 file dikonversi</h3>
                                 <p class="text-sm text-gray-500" id="total-size">0 KB total</p>
                             </div>
                         </div>
                         <div class="flex space-x-3">
                             <button id="download-all-btn"
                                 class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">
-                                <i class="fas fa-download mr-2"></i>Download All
+                                <i class="fas fa-download mr-2"></i>Unduh Semua
                             </button>
                             <button id="convert-another-btn"
                                 class="border border-primary text-primary px-4 py-2 rounded-lg hover:bg-blue-50 transition-colors">
-                                Convert More
+                                Konversi Lagi
                             </button>
                         </div>
                     </div>
@@ -192,7 +189,7 @@
 
                     <!-- 预览区域 -->
                     <div class="bg-gray-50 rounded-xl p-4 image-preview-container" id="preview-container">
-                        <p class="text-center text-gray-500 py-4">Select an image to preview</p>
+                        <p class="text-center text-gray-500 py-4">Pilih gambar untuk pratinjau</p>
                     </div>
                 </div>
             </div>
@@ -202,7 +199,7 @@
     <!-- Features Section -->
     <section class="py-16 md:py-24 px-6 md:px-12 lg:px-24 bg-secondary">
         <div class="container mx-auto">
-            <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center">Why Choose Our Converter</h2>
+            <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center">Mengapa Memilih Konverter Kami</h2>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Feature 1 -->
@@ -210,9 +207,9 @@
                     <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
                         <i class="fas fa-bolt text-primary text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">Fast Conversion</h3>
-                    <p class="text-gray-600">Convert your AVIF images to PNG format in seconds with our optimized
-                        processing engine.</p>
+                    <h3 class="text-xl font-bold mb-4">Konversi Cepat</h3>
+                    <p class="text-gray-600">Konversikan gambar AVIF Anda ke format PNG dalam hitungan detik dengan
+                        mesin pemrosesan yang dioptimalkan.</p>
                 </div>
 
                 <!-- Feature 2 -->
@@ -220,9 +217,9 @@
                     <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
                         <i class="fas fa-lock text-primary text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">100% Secure</h3>
-                    <p class="text-gray-600">Your files are processed locally in your browser. We never upload your
-                        images to any server.</p>
+                    <h3 class="text-xl font-bold mb-4">100% Aman</h3>
+                    <p class="text-gray-600">File Anda diproses secara lokal di browser Anda. Kami tidak pernah
+                        mengunggah gambar Anda ke server mana pun.</p>
                 </div>
 
                 <!-- Feature 3 -->
@@ -230,9 +227,9 @@
                     <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
                         <i class="fas fa-image text-primary text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-4">High Quality</h3>
-                    <p class="text-gray-600">Our converter maintains the highest possible image quality during the
-                        conversion process.</p>
+                    <h3 class="text-xl font-bold mb-4">Kualitas Tinggi</h3>
+                    <p class="text-gray-600">Konverter kami mempertahankan kualitas gambar tertinggi selama proses
+                        konversi.</p>
                 </div>
             </div>
         </div>
@@ -241,32 +238,33 @@
     <!-- How It Works Section -->
     <section class="py-16 md:py-24 px-6 md:px-12 lg:px-24">
         <div class="container mx-auto max-w-4xl">
-            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">How to Convert AVIF to PNG</h2>
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">Cara Mengkonversi AVIF ke PNG</h2>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="bg-white p-6 rounded-xl shadow-md text-center">
                     <div class="bg-blue-50 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
                         <span class="text-primary font-bold text-xl">1</span>
                     </div>
-                    <h3 class="font-bold mb-2">Upload</h3>
-                    <p class="text-gray-600">Drag and drop your AVIF files or click to browse your device</p>
+                    <h3 class="font-bold mb-2">Unggah</h3>
+                    <p class="text-gray-600">Seret dan lepaskan file AVIF Anda atau klik untuk menelusuri perangkat Anda
+                    </p>
                 </div>
 
                 <div class="bg-white p-6 rounded-xl shadow-md text-center">
                     <div class="bg-blue-50 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
                         <span class="text-primary font-bold text-xl">2</span>
                     </div>
-                    <h3 class="font-bold mb-2">Convert</h3>
-                    <p class="text-gray-600">Our AVIF to PNG converter processes your files instantly in your browser
-                    </p>
+                    <h3 class="font-bold mb-2">Konversi</h3>
+                    <p class="text-gray-600">Konverter AVIF ke PNG kami memproses file Anda secara instan di browser
+                        Anda</p>
                 </div>
 
                 <div class="bg-white p-6 rounded-xl shadow-md text-center">
                     <div class="bg-blue-50 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
                         <span class="text-primary font-bold text-xl">3</span>
                     </div>
-                    <h3 class="font-bold mb-2">Download</h3>
-                    <p class="text-gray-600">Download your converted PNG files individually or all at once</p>
+                    <h3 class="font-bold mb-2">Unduh</h3>
+                    <p class="text-gray-600">Unduh file PNG yang dikonversi secara individual atau sekaligus</p>
                 </div>
             </div>
         </div>
@@ -275,31 +273,32 @@
     <!-- Benefits Section -->
     <section class="py-16 md:py-24 px-6 md:px-12 lg:px-24 bg-gray-50">
         <div class="container mx-auto max-w-4xl">
-            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">Benefits of Converting AVIF to PNG</h2>
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">Manfaat Mengkonversi AVIF ke PNG</h2>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="bg-white p-8 rounded-xl shadow-md">
-                    <h3 class="text-xl font-bold mb-4 text-primary">Wider Compatibility</h3>
-                    <p class="text-gray-600">While AVIF is newer and more efficient, PNG is supported by virtually all
-                        software and platforms. Converting from AVIF to PNG ensures your images work everywhere.</p>
+                    <h3 class="text-xl font-bold mb-4 text-primary">Kompatibilitas Lebih Luas</h3>
+                    <p class="text-gray-600">Meskipun AVIF lebih baru dan lebih efisien, PNG didukung oleh hampir semua
+                        perangkat lunak dan platform. Mengkonversi dari AVIF ke PNG memastikan gambar Anda berfungsi di
+                        mana saja.</p>
                 </div>
 
                 <div class="bg-white p-8 rounded-xl shadow-md">
-                    <h3 class="text-xl font-bold mb-4 text-primary">Lossless Quality</h3>
-                    <p class="text-gray-600">Our AVIF to PNG converter maintains image quality during conversion,
-                        ensuring your visuals remain crisp and clear.</p>
+                    <h3 class="text-xl font-bold mb-4 text-primary">Kualitas Tanpa Kehilangan</h3>
+                    <p class="text-gray-600">Konverter AVIF ke PNG kami mempertahankan kualitas gambar selama konversi,
+                        memastikan visual Anda tetap tajam dan jelas.</p>
                 </div>
 
                 <div class="bg-white p-8 rounded-xl shadow-md">
-                    <h3 class="text-xl font-bold mb-4 text-primary">Transparency Support</h3>
-                    <p class="text-gray-600">PNG format supports transparency, making it ideal for logos, icons, and
-                        images that need to be placed on different backgrounds.</p>
+                    <h3 class="text-xl font-bold mb-4 text-primary">Dukungan Transparansi</h3>
+                    <p class="text-gray-600">Format PNG mendukung transparansi, menjadikannya ideal untuk logo, ikon,
+                        dan gambar yang perlu ditempatkan pada latar belakang yang berbeda.</p>
                 </div>
 
                 <div class="bg-white p-8 rounded-xl shadow-md">
-                    <h3 class="text-xl font-bold mb-4 text-primary">Easy Editing</h3>
-                    <p class="text-gray-600">PNG files are easier to edit in most graphic design software compared to
-                        AVIF files, giving you more flexibility with your images.</p>
+                    <h3 class="text-xl font-bold mb-4 text-primary">Pengeditan Mudah</h3>
+                    <p class="text-gray-600">File PNG lebih mudah diedit di sebagian besar perangkat lunak desain grafis
+                        dibandingkan dengan file AVIF, memberikan Anda fleksibilitas lebih dengan gambar Anda.</p>
                 </div>
             </div>
         </div>
@@ -308,31 +307,31 @@
     <!-- Use Cases Section -->
     <section class="py-16 md:py-24 px-6 md:px-12 lg:px-24">
         <div class="container mx-auto max-w-4xl">
-            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">When to Use an AVIF to PNG Converter</h2>
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">Kapan Menggunakan Konverter AVIF ke PNG</h2>
 
             <div class="space-y-6">
                 <div class="bg-white p-6 rounded-xl shadow-md">
-                    <h3 class="text-xl font-bold mb-2">Website Development</h3>
-                    <p class="text-gray-600">Convert AVIF to PNG when building websites that need to support older
-                        browsers or when you need transparent background images.</p>
+                    <h3 class="text-xl font-bold mb-2">Pengembangan Website</h3>
+                    <p class="text-gray-600">Konversikan AVIF ke PNG saat membangun website yang perlu mendukung browser
+                        lama atau saat Anda membutuhkan gambar dengan latar belakang transparan.</p>
                 </div>
 
                 <div class="bg-white p-6 rounded-xl shadow-md">
-                    <h3 class="text-xl font-bold mb-2">Graphic Design</h3>
-                    <p class="text-gray-600">Use our AVIF to PNG converter when working with design software that
-                        doesn't support the AVIF format but requires high-quality images.</p>
+                    <h3 class="text-xl font-bold mb-2">Desain Grafis</h3>
+                    <p class="text-gray-600">Gunakan konverter AVIF ke PNG kami saat bekerja dengan perangkat lunak
+                        desain yang tidak mendukung format AVIF tetapi membutuhkan gambar berkualitas tinggi.</p>
                 </div>
 
                 <div class="bg-white p-6 rounded-xl shadow-md">
                     <h3 class="text-xl font-bold mb-2">E-commerce</h3>
-                    <p class="text-gray-600">Convert from AVIF to PNG for product images that need to be displayed
-                        consistently across various platforms and devices.</p>
+                    <p class="text-gray-600">Konversikan dari AVIF ke PNG untuk gambar produk yang perlu ditampilkan
+                        secara konsisten di berbagai platform dan perangkat.</p>
                 </div>
 
                 <div class="bg-white p-6 rounded-xl shadow-md">
-                    <h3 class="text-xl font-bold mb-2">Social Media</h3>
-                    <p class="text-gray-600">Our AVIF to PNG converter helps prepare images for social media platforms
-                        that may not fully support the AVIF format yet.</p>
+                    <h3 class="text-xl font-bold mb-2">Media Sosial</h3>
+                    <p class="text-gray-600">Konverter AVIF ke PNG kami membantu menyiapkan gambar untuk platform media
+                        sosial yang mungkin belum sepenuhnya mendukung format AVIF.</p>
                 </div>
             </div>
         </div>
@@ -341,64 +340,65 @@
     <!-- Comparison Section -->
     <section class="py-16 md:py-24 px-6 md:px-12 lg:px-24 bg-gray-50">
         <div class="container mx-auto max-w-4xl">
-            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">AVIF vs PNG: Format Comparison</h2>
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">AVIF vs PNG: Perbandingan Format</h2>
 
             <div class="overflow-hidden bg-white rounded-xl shadow-md">
                 <table class="w-full">
                     <thead class="bg-primary text-white">
                         <tr>
-                            <th class="py-4 px-6 text-left">Feature</th>
+                            <th class="py-4 px-6 text-left">Fitur</th>
                             <th class="py-4 px-6 text-center">AVIF</th>
                             <th class="py-4 px-6 text-center">PNG</th>
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-gray-200">
                         <tr>
-                            <td class="py-4 px-6 font-medium">File Size</td>
-                            <td class="py-4 px-6 text-center">Smaller</td>
-                            <td class="py-4 px-6 text-center">Larger</td>
+                            <td class="py-4 px-6 font-medium">Ukuran File</td>
+                            <td class="py-4 px-6 text-center">Lebih Kecil</td>
+                            <td class="py-4 px-6 text-center">Lebih Besar</td>
                         </tr>
                         <tr>
-                            <td class="py-4 px-6 font-medium">Compatibility</td>
-                            <td class="py-4 px-6 text-center">Limited</td>
-                            <td class="py-4 px-6 text-center">Excellent</td>
+                            <td class="py-4 px-6 font-medium">Kompatibilitas</td>
+                            <td class="py-4 px-6 text-center">Terbatas</td>
+                            <td class="py-4 px-6 text-center">Sangat Baik</td>
                         </tr>
                         <tr>
-                            <td class="py-4 px-6 font-medium">Transparency</td>
-                            <td class="py-4 px-6 text-center">Supported</td>
-                            <td class="py-4 px-6 text-center">Fully Supported</td>
+                            <td class="py-4 px-6 font-medium">Transparansi</td>
+                            <td class="py-4 px-6 text-center">Didukung</td>
+                            <td class="py-4 px-6 text-center">Didukung Penuh</td>
                         </tr>
                         <tr>
-                            <td class="py-4 px-6 font-medium">Image Quality</td>
-                            <td class="py-4 px-6 text-center">High at small sizes</td>
-                            <td class="py-4 px-6 text-center">Lossless</td>
+                            <td class="py-4 px-6 font-medium">Kualitas Gambar</td>
+                            <td class="py-4 px-6 text-center">Tinggi pada ukuran kecil</td>
+                            <td class="py-4 px-6 text-center">Tanpa Kehilangan</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-            <p class="text-center mt-6 text-gray-600">Our converter AVIF to PNG helps you get the best of both worlds -
-                the space efficiency of AVIF and the compatibility of PNG.</p>
+            <p class="text-center mt-6 text-gray-600">Konverter AVIF ke PNG kami membantu Anda mendapatkan yang terbaik
+                dari kedua dunia - efisiensi ruang AVIF dan kompatibilitas PNG.</p>
         </div>
     </section>
 
     <!-- FAQ Section -->
     <section id="faq" class="py-16 md:py-24 px-6 md:px-12 lg:px-24">
         <div class="container mx-auto max-w-4xl">
-            <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center">Frequently Asked Questions</h2>
+            <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center">Pertanyaan yang Sering Diajukan</h2>
 
             <div class="space-y-6">
                 <!-- FAQ Item 1 -->
                 <div class="bg-white rounded-xl shadow-md overflow-hidden">
                     <button class="faq-toggle w-full text-left p-6 focus:outline-none">
                         <div class="flex justify-between items-center">
-                            <h3 class="text-xl font-medium">What is an AVIF file?</h3>
+                            <h3 class="text-xl font-medium">Apa itu file AVIF?</h3>
                             <i class="fas fa-chevron-down text-gray-400 transition-transform"></i>
                         </div>
                     </button>
                     <div class="faq-content hidden px-6 pb-6">
-                        <p class="text-gray-600">AVIF (AV1 Image File Format) is a modern image format that offers
-                            significant file size reduction compared to JPEG, PNG, and WebP, while maintaining high
-                            visual quality. It's based on the AV1 video codec.</p>
+                        <p class="text-gray-600">AVIF (AV1 Image File Format) adalah format gambar modern yang
+                            menawarkan pengurangan ukuran file yang signifikan dibandingkan dengan JPEG, PNG, dan WebP,
+                            sambil mempertahankan kualitas visual yang tinggi. Format ini didasarkan pada codec video
+                            AV1.</p>
                     </div>
                 </div>
 
@@ -406,14 +406,14 @@
                 <div class="bg-white rounded-xl shadow-md overflow-hidden">
                     <button class="faq-toggle w-full text-left p-6 focus:outline-none">
                         <div class="flex justify-between items-center">
-                            <h3 class="text-xl font-medium">Why convert AVIF to PNG?</h3>
+                            <h3 class="text-xl font-medium">Mengapa mengkonversi AVIF ke PNG?</h3>
                             <i class="fas fa-chevron-down text-gray-400 transition-transform"></i>
                         </div>
                     </button>
                     <div class="faq-content hidden px-6 pb-6">
-                        <p class="text-gray-600">While AVIF offers better compression, PNG is more widely supported
-                            across applications and platforms. Converting to PNG ensures compatibility with software
-                            that doesn't yet support the newer AVIF format.</p>
+                        <p class="text-gray-600">Meskipun AVIF menawarkan kompresi yang lebih baik, PNG didukung secara
+                            lebih luas di berbagai aplikasi dan platform. Mengkonversi ke PNG memastikan kompatibilitas
+                            dengan perangkat lunak yang belum mendukung format AVIF yang lebih baru.</p>
                     </div>
                 </div>
 
@@ -421,13 +421,13 @@
                 <div class="bg-white rounded-xl shadow-md overflow-hidden">
                     <button class="faq-toggle w-full text-left p-6 focus:outline-none">
                         <div class="flex justify-between items-center">
-                            <h3 class="text-xl font-medium">Is there a file size limit?</h3>
+                            <h3 class="text-xl font-medium">Apakah ada batasan ukuran file?</h3>
                             <i class="fas fa-chevron-down text-gray-400 transition-transform"></i>
                         </div>
                     </button>
                     <div class="faq-content hidden px-6 pb-6">
-                        <p class="text-gray-600">Yes, the maximum file size is 20MB. This limit helps ensure optimal
-                            performance since all processing happens in your browser.</p>
+                        <p class="text-gray-600">Ya, ukuran file maksimum adalah 20MB. Batasan ini membantu memastikan
+                            kinerja optimal karena semua pemrosesan terjadi di browser Anda.</p>
                     </div>
                 </div>
 
@@ -435,13 +435,14 @@
                 <div class="bg-white rounded-xl shadow-md overflow-hidden">
                     <button class="faq-toggle w-full text-left p-6 focus:outline-none">
                         <div class="flex justify-between items-center">
-                            <h3 class="text-xl font-medium">Is my data private?</h3>
+                            <h3 class="text-xl font-medium">Apakah data saya pribadi?</h3>
                             <i class="fas fa-chevron-down text-gray-400 transition-transform"></i>
                         </div>
                     </button>
                     <div class="faq-content hidden px-6 pb-6">
-                        <p class="text-gray-600">Absolutely. All conversion happens locally in your browser. Your images
-                            are never uploaded to any server, ensuring complete privacy and security.</p>
+                        <p class="text-gray-600">Tentu saja. Semua konversi terjadi secara lokal di browser Anda. Gambar
+                            Anda tidak pernah diunggah ke server mana pun, memastikan privasi dan keamanan yang lengkap.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -451,14 +452,12 @@
     <!-- About Section -->
     <section id="about" class="py-16 md:py-24 px-6 md:px-12 lg:px-24 bg-secondary">
         <div class="container mx-auto max-w-4xl text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-8">About AVIFtoPNG</h2>
+            <h2 class="text-3xl md:text-4xl font-bold mb-8">Tentang AVIFtoPNG</h2>
             <p class="text-lg text-gray-600 mb-10">
-                AVIFtoPNG is a free online tool designed to make image format conversion simple and accessible to
-                everyone.
-                We built this tool to solve the compatibility issues that arise when working with newer image formats
-                like AVIF.
-                Our mission is to provide fast, secure, and high-quality image conversion without any technical
-                barriers.
+                AVIFtoPNG adalah alat online gratis yang dirancang untuk membuat konversi format gambar menjadi
+                sederhana dan dapat diakses oleh semua orang. Kami membangun alat ini untuk menyelesaikan masalah
+                kompatibilitas yang muncul saat bekerja dengan format gambar yang lebih baru seperti AVIF. Misi kami
+                adalah menyediakan konversi gambar yang cepat, aman, dan berkualitas tinggi tanpa hambatan teknis.
             </p>
         </div>
     </section>
@@ -475,10 +474,10 @@
 
                 <!-- 页面导航链接 -->
                 <div class="flex justify-center space-x-4">
-                    <a href="privacy.html" class="text-primary hover:underline" title="Privacy Plicy">Privacy Policy</a>
-                    <a href="terms.html" class="text-primary hover:underline" title="Terms of Service">Terms of
+                    <a href="/id/contact.html" class="text-primary hover:underline" title="Privacy Plicy">Privacy Policy</a>
+                    <a href="/id/contact.html" class="text-primary hover:underline" title="Terms of Service">Terms of
                         Service</a>
-                    <a href="contact.html" class="text-primary hover:underline" title="Contact Us">Contact Us</a>
+                    <a href="/id/contact.html" class="text-primary hover:underline" title="Contact Us">Contact Us</a>
                 </div>
 
                 <!-- Social Media Sharing -->
@@ -516,8 +515,8 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="script.js"></script>
-    <script src="share.js"></script>
+    <script src="../script.js"></script>
+    <script src="../share.js"></script>
 </body>
 
 </html>
