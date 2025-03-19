@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>संपर्क करें | AVIF से PNG कन्वर्टर</title>
+    <meta name="description"
+        content="सहायता, प्रतिक्रिया या व्यावसायिक पूछताछ के लिए AVIF से PNG कन्वर्टर टीम से संपर्क करें।">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0077ED',
+                        secondary: '#F5F5F7',
+                        dark: '#1D1D1F',
+                    },
+                    fontFamily: {
+                        sans: ['SF Pro Display', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-white font-sans text-dark">
+    <!-- Header -->
+    <header class="bg-secondary py-4 px-6 md:px-12 lg:px-24">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="/hi" class="text-2xl font-bold text-primary">AVIFtoPNG</a>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="/hi" class="hover:text-primary transition-colors">होम</a></li>
+                    <li class="relative group">
+                        <button class="hover:text-primary transition-colors flex items-center" title="Choose Language">
+                            <i class="fas fa-globe mr-1"></i> Language <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </button>
+                        <div
+                            class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 hidden group-hover:block z-10 transition-all duration-300 opacity-0 group-hover:opacity-100 invisible group-hover:visible">
+                            <!-- 添加一个透明的桥接元素，扩大悬停区域 -->
+                            <div class="absolute -top-2 left-0 right-0 h-2 bg-transparent"></div>
+                            <a href="/contact.html" class="block px-4 py-2 hover:bg-gray-100">English</a>
+                            <a href="/hi/contact.html" class="block px-4 py-2 hover:bg-gray-100">हिन्दी</a>
+                            <a href="/pt/contact.html" class="block px-4 py-2 hover:bg-gray-100">Português</a>
+                            <a href="/id/contact.html" class="block px-4 py-2 hover:bg-gray-100">Bahasa Indonesia</a>
+                            <a href="/tl/contact.html" class="block px-4 py-2 hover:bg-gray-100">Filipino</a>
+                            <a href="/fr/contact.html" class="block px-4 py-2 hover:bg-gray-100">Français</a>
+                            <a href="/zh-cn/contact.html" class="block px-4 py-2 hover:bg-gray-100">简体中文</a>
+                            <a href="/zh-tw/contact.html" class="block px-4 py-2 hover:bg-gray-100">繁體中文</a>
+                            <a href="/ur/contact.html" class="block px-4 py-2 hover:bg-gray-100">اردو</a>
+                            <a href="/tr/contact.html" class="block px-4 py-2 hover:bg-gray-100">Türkçe</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <section class="py-12 md:py-16 px-6 md:px-12 lg:px-24">
+        <div class="container mx-auto max-w-4xl">
+            <h1 class="text-3xl md:text-4xl font-bold mb-8 text-center">हमसे संपर्क करें</h1>
+
+            <div class="container mx-auto max-w-3xl">
+                <!-- Contact Information -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 md:p-12">
+                    <h2 class="text-2xl font-bold mb-8 text-center">हमसे संपर्क करें</h2>
+
+                    <!-- Main Email Contact -->
+                    <div class="text-center mb-12">
+                        <div class="inline-block bg-blue-100 p-4 rounded-full mb-4">
+                            <i class="fas fa-envelope text-primary text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-medium mb-2">ईमेल करें</h3>
+                        <a href="mailto:support@aviftopng.com" class="text-primary text-lg hover:underline">
+                            support@aviftopng.com
+                        </a>
+                        <p class="text-gray-500 mt-2">हम 24 घंटे के भीतर जवाब देंगे</p>
+                    </div>
+
+                    <!-- Other Contact Methods -->
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="bg-gray-50 rounded-xl p-6 text-center">
+                            <div class="inline-block bg-blue-100 p-3 rounded-full mb-3">
+                                <i class="fas fa-comment-alt text-primary"></i>
+                            </div>
+                            <h3 class="font-medium mb-2">लाइव चैट</h3>
+                            <p class="text-gray-600">तत्काल सहायता प्राप्त करें</p>
+                            <a href="#" class="text-primary hover:underline text-sm block mt-2">चैट शुरू करें</a>
+                        </div>
+
+                        <div class="bg-gray-50 rounded-xl p-6 text-center">
+                            <div class="inline-block bg-blue-100 p-3 rounded-full mb-3">
+                                <i class="fas fa-lightbulb text-primary"></i>
+                            </div>
+                            <h3 class="font-medium mb-2">सुझाव दें</h3>
+                            <p class="text-gray-600">हमें बेहतर बनने में मदद करें</p>
+                            <a href="mailto:feedback@aviftopng.com"
+                                class="text-primary hover:underline text-sm block mt-2">विचार साझा करें</a>
+                        </div>
+                    </div>
+
+                    <!-- Social Media Links -->
+                    <div class="mt-12 text-center">
+                        <h3 class="font-medium mb-4">दोस्तों के साथ साझा करें</h3>
+                        <div class="flex justify-center space-x-4">
+                            <a href="https://twitter.com/intent/tweet?text=इस%20मुफ्त%20ऑनलाइन%20टूल%20से%20AVIF%20को%20PNG%20में%20तुरंत%20बदलें!&url=https://aviftopng.com"
+                                target="_blank" rel="noopener noreferrer"
+                                class="bg-[#1DA1F2] hover:bg-[#1a8cd8] p-4 rounded-full transition-colors group">
+                                <i class="fab fa-twitter text-white text-xl"></i>
+                                <span class="sr-only">Twitter पर साझा करें</span>
+                            </a>
+                            <a href="https://www.facebook.com/sharer/sharer.php?u=https://aviftopng.com" target="_blank"
+                                rel="noopener noreferrer"
+                                class="bg-[#1877F2] hover:bg-[#166fe5] p-4 rounded-full transition-colors group">
+                                <i class="fab fa-facebook-f text-white text-xl"></i>
+                                <span class="sr-only">Facebook पर साझा करें</span>
+                            </a>
+                            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://aviftopng.com&title=मुफ्त%20AVIF%20से%20PNG%20कनवर्टर&summary=AVIF%20छवियों%20को%20आसानी%20से%20PNG%20प्रारूप%20में%20बदलें"
+                                target="_blank" rel="noopener noreferrer"
+                                class="bg-[#0A66C2] hover:bg-[#094ea0] p-4 rounded-full transition-colors group">
+                                <i class="fab fa-linkedin-in text-white text-xl"></i>
+                                <span class="sr-only">LinkedIn पर साझा करें</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="mt-16">
+            <h2 class="text-2xl font-bold mb-6 text-center">अक्सर पूछे जाने वाले प्रश्न</h2>
+
+            <div class="space-y-4">
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <button class="faq-toggle w-full text-left p-5 focus:outline-none">
+                        <div class="flex justify-between items-center">
+                            <h3 class="font-medium">मुझे जवाब कितनी जल्दी मिलेगा?</h3>
+                            <i class="fas fa-chevron-down text-gray-400 transition-transform"></i>
+                        </div>
+                    </button>
+                    <div class="faq-content hidden px-5 pb-5">
+                        <p class="text-gray-600">हम आमतौर पर व्यावसायिक दिनों के दौरान 24 घंटे के भीतर सभी पूछताछ का
+                            जवाब देते हैं। तत्काल मामलों के लिए, कृपया अपने विषय में इसका उल्लेख करें।</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <button class="faq-toggle w-full text-left p-5 focus:outline-none">
+                        <div class="flex justify-between items-center">
+                            <h3 class="font-medium">क्या आप कस्टम विकास सेवाएं प्रदान करते हैं?</h3>
+                            <i class="fas fa-chevron-down text-gray-400 transition-transform"></i>
+                        </div>
+                    </button>
+                    <div class="faq-content hidden px-5 pb-5">
+                        <p class="text-gray-600">हां, हम उन व्यवसायों के लिए कस्टम विकास सेवाएं प्रदान करते हैं जिन्हें
+                            विशेष छवि रूपांतरण समाधान की आवश्यकता होती है। कृपया कोटेशन के लिए अपनी आवश्यकताओं के साथ
+                            हमसे संपर्क करें।</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <button class="faq-toggle w-full text-left p-5 focus:outline-none">
+                        <div class="flex justify-between items-center">
+                            <h3 class="font-medium">मैं किसी बग की रिपोर्ट या सुविधा का सुझाव कैसे दे सकता हूं?</h3>
+                            <i class="fas fa-chevron-down text-gray-400 transition-transform"></i>
+                        </div>
+                    </button>
+                    <div class="faq-content hidden px-5 pb-5">
+                        <p class="text-gray-600">हम आपकी प्रतिक्रिया का स्वागत करते हैं! कृपया संपर्क फॉर्म का उपयोग
+                            करें और विषय के रूप में "प्रतिक्रिया" का चयन करें। बग या सुविधा अनुरोध का विस्तार से वर्णन
+                            करें, और हम इसकी तुरंत समीक्षा करेंगे।</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-8 px-6 md:px-12 lg:px-24">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <a href="/hi" class="text-xl font-bold text-primary mb-2 inline-block">AVIFtoPNG</a>
+                    <p class="text-gray-400 text-sm">© 2025 AVIFtoPNG. सर्वाधिकार सुरक्षित।</p>
+                </div>
+
+                <!-- 页面导航链接 -->
+                <div class="flex flex-wrap justify-center space-x-4 mb-6 md:mb-0">
+                    <a href="/hi" class="text-gray-400 hover:text-white transition-colors">होम</a>
+                    <a href="/hi/privacy.html" class="text-gray-400 hover:text-white transition-colors">गोपनीयता
+                        नीति</a>
+                    <a href="/hi/terms.html" class="text-gray-400 hover:text-white transition-colors">सेवा की शर्तें</a>
+                    <a href="/hi/contact.html" class="text-gray-400 hover:text-white transition-colors">हमसे संपर्क
+                        करें</a>
+                </div>
+
+                <!-- सोशल मीडिया शेयरिंग -->
+                <div class="flex flex-col items-center md:items-end">
+                    <div class="flex flex-wrap gap-2">
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=https://aviftopng.com" target="_blank"
+                            rel="noopener noreferrer"
+                            class="bg-[#1877F2] hover:bg-[#166fe5] text-white text-xs px-3 py-1 rounded-full transition-colors inline-flex items-center">
+                            <i class="fab fa-facebook-f mr-1"></i> शेयर करें
+                        </a>
+                        <a href="https://twitter.com/intent/tweet?text=इस%20मुफ्त%20ऑनलाइन%20टूल%20से%20AVIF%20को%20PNG%20में%20तुरंत%20बदलें!&url=https://aviftopng.com"
+                            target="_blank" rel="noopener noreferrer"
+                            class="bg-[#1DA1F2] hover:bg-[#1a8cd8] text-white text-xs px-3 py-1 rounded-full transition-colors inline-flex items-center">
+                            <i class="fab fa-twitter mr-1"></i> ट्वीट करें
+                        </a>
+                        <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://aviftopng.com&title=मुफ्त%20AVIF%20से%20PNG%20कनवर्टर"
+                            target="_blank" rel="noopener noreferrer"
+                            class="bg-[#0A66C2] hover:bg-[#094ea0] text-white text-xs px-3 py-1 rounded-full transition-colors inline-flex items-center">
+                            <i class="fab fa-linkedin-in mr-1"></i> शेयर करें
+                        </a>
+                        <a href="https://pinterest.com/pin/create/button/?url=https://aviftopng.com&description=मुफ्त%20AVIF%20से%20PNG%20कनवर्टर"
+                            target="_blank" rel="noopener noreferrer"
+                            class="bg-[#E60023] hover:bg-[#cc0000] text-white text-xs px-3 py-1 rounded-full transition-colors inline-flex items-center">
+                            <i class="fab fa-pinterest-p mr-1"></i> पिन करें
+                        </a>
+                        <a href="https://api.whatsapp.com/send?text=इस%20मुफ्त%20AVIF%20से%20PNG%20कनवर्टर%20को%20देखें:%20https://aviftopng.com"
+                            target="_blank" rel="noopener noreferrer"
+                            class="bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs px-3 py-1 rounded-full transition-colors inline-flex items-center">
+                            <i class="fab fa-whatsapp mr-1"></i> शेयर करें
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../script.js"></script>
+    <script src="../share.js"></script>
+</body>
+
+</html>

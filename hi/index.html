@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AVIF से PNG | मुफ्त कन्वर्टर</title>
+    <meta name="description"
+        content="हमारे मुफ्त ऑनलाइन टूल से आसानी से AVIF छवियों को PNG प्रारूप में बदलें। कोई पंजीकरण आवश्यक नहीं।">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0077ED',
+                        secondary: '#F5F5F7',
+                        dark: '#1D1D1F',
+                    },
+                    fontFamily: {
+                        sans: ['SF Pro Display', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        .drop-zone {
+            border: 2px dashed #d1d5db;
+            transition: all 0.3s ease;
+        }
+
+        .drop-zone:hover,
+        .drop-zone.active {
+            border-color: #0077ED;
+            background-color: rgba(0, 119, 237, 0.05);
+        }
+
+        .progress-bar {
+            transition: width 0.3s ease;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-white font-sans text-dark">
+    <!-- Header -->
+    <header class="bg-secondary py-4 px-6 md:px-12 lg:px-24">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="text-2xl font-bold text-primary">AVIFtoPNG</div>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="/hi" class="hover:text-primary transition-colors" title="AVIF से PNG">होम</a>
+                    </li>
+                    <li><a href="#about" class="hover:text-primary transition-colors" title="हमारे बारे में">हमारे बारे
+                            में</a></li>
+                    <li><a href="#faq" class="hover:text-primary transition-colors"
+                            title="अक्सर पूछे जाने वाले प्रश्न">अक्सर पूछे जाने वाले प्रश्न</a>
+                    </li>
+                    <li><a href="/hi/contact.html" class="hover:text-primary transition-colors"
+                            title="संपर्क करें">संपर्क
+                            करें</a></li>
+                    <li class="relative group">
+                        <button class="hover:text-primary transition-colors flex items-center" title="भाषा चुनें">
+                            <i class="fas fa-globe mr-1"></i> भाषा <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </button>
+                        <div
+                            class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 hidden group-hover:block z-10 transition-all duration-300 opacity-0 group-hover:opacity-100 invisible group-hover:visible">
+                            <!-- 添加一个透明的桥接元素，扩大悬停区域 -->
+                            <div class="absolute -top-2 left-0 right-0 h-2 bg-transparent"></div>
+                            <a href="/" class="block px-4 py-2 hover:bg-gray-100">English</a>
+                            <a href="/hi" class="block px-4 py-2 hover:bg-gray-100">हिन्दी</a>
+                            <a href="/pt" class="block px-4 py-2 hover:bg-gray-100">Português</a>
+                            <a href="/id" class="block px-4 py-2 hover:bg-gray-100">Bahasa Indonesia</a>
+                            <a href="/tl" class="block px-4 py-2 hover:bg-gray-100">Filipino</a>
+                            <a href="/fr" class="block px-4 py-2 hover:bg-gray-100">Français</a>
+                            <a href="/zh-cn" class="block px-4 py-2 hover:bg-gray-100">简体中文</a>
+                            <a href="/zh-tw" class="block px-4 py-2 hover:bg-gray-100">繁體中文</a>
+                            <a href="/ur" class="block px-4 py-2 hover:bg-gray-100">اردو</a>
+                            <a href="/tr" class="block px-4 py-2 hover:bg-gray-100">Türkçe</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+
+            <div id="error-message" class="hidden mt-4 p-4 bg-red-100 text-red-700 rounded-lg">
+                <div class="flex items-center">
+                    <i class="fas fa-exclamation-circle mr-2"></i>
+                    <p id="error-text">फ़ाइल प्रोसेसिंग में त्रुटि। कृपया सुनिश्चित करें कि आप एक वैध AVIF फ़ाइल अपलोड
+                        कर रहे हैं।</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="py-16 md:py-24 px-6 md:px-12 lg:px-24 bg-gradient-to-b from-secondary to-white">
+        <div class="container mx-auto text-center">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">AVIF से PNG | मुफ्त कन्वर्टर</h1>
+            <p class="text-xl md:text-2xl text-gray-600 mb-10 max-w-3xl mx-auto">
+                अपनी AVIF छवियों को PNG प्रारूप में बदलने के लिए एक सरल, तेज़ और मुफ्त ऑनलाइन टूल।
+            </p>
+            <a href="#converter"
+                class="bg-primary text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-blue-600 transition-colors shadow-lg btn-hover-effect"
+                title="कन्वर्ट करना शुरू करें">
+                कन्वर्ट करना शुरू करें
+            </a>
+        </div>
+    </section>
+
+    <!-- Converter Section -->
+    <section id="converter" class="py-16 md:py-24 px-6 md:px-12 lg:px-24">
+        <div class="container mx-auto max-w-4xl">
+            <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12">
+                <h2 class="text-3xl font-bold mb-8 text-center">अपनी AVIF फ़ाइल अपलोड करें</h2>
+
+                <!-- Upload Area -->
+                <div id="drop-zone" class="drop-zone rounded-xl p-12 text-center cursor-pointer mb-8">
+                    <input type="file" id="file-input" accept=".avif" class="hidden" multiple>
+                    <div class="mb-4">
+                        <i class="fas fa-cloud-upload-alt text-5xl text-gray-400"></i>
+                    </div>
+                    <p class="text-lg mb-2">अपनी AVIF फ़ाइलों को यहां खींचें और छोड़ें</p>
+                    <p class="text-gray-500 mb-6">या</p>
+                    <button id="browse-button"
+                        class="bg-primary text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition-colors">
+                        फ़ाइलें ब्राउज़ करें
+                    </button>
+                    <p class="text-sm text-gray-500 mt-4">अधिकतम फ़ाइल आकार: प्रति फ़ाइल 10MB</p>
+                </div>
+
+                <!-- Processing Area (Initially Hidden) -->
+                <div id="processing-area" class="hidden">
+                    <div class="mb-6">
+                        <p class="text-lg font-medium mb-2">कन्वर्ट हो रहा है...</p>
+                        <div class="w-full bg-gray-200 rounded-full h-2.5">
+                            <div id="progress-bar" class="progress-bar bg-primary h-2.5 rounded-full" style="width: 0%">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="animate-spin rounded-full h-6 w-6 border-b-2 border-primary mr-3"></div>
+                        <p id="status-text">आपकी छवि प्रोसेस हो रही है...</p>
+                    </div>
+                </div>
+
+                <!-- Result Area (Initially Hidden) -->
+                <div id="result-area" class="hidden fade-in">
+                    <div class="flex flex-col md:flex-row items-center justify-between bg-gray-50 rounded-xl p-6 mb-6">
+                        <div class="flex items-center mb-4 md:mb-0">
+                            <div class="bg-green-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-check text-green-500"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-medium" id="conversion-summary">0 फ़ाइलें कन्वर्ट की गईं</h3>
+                                <p class="text-sm text-gray-500" id="total-size">कुल 0 KB</p>
+                            </div>
+                        </div>
+                        <div class="flex space-x-3">
+                            <button id="download-all-btn"
+                                class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors">
+                                <i class="fas fa-download mr-2"></i>सभी डाउनलोड करें
+                            </button>
+                            <button id="convert-another-btn"
+                                class="border border-primary text-primary px-4 py-2 rounded-lg hover:bg-blue-50 transition-colors">
+                                और कन्वर्ट करें
+                            </button>
+                        </div>
+                    </div>
+
+                    <div id="results-list" class="space-y-4 mb-6 max-h-96 overflow-y-auto pr-2">
+                        <!-- 结果项将通过JavaScript动态添加 -->
+                    </div>
+
+                    <div class="bg-gray-50 rounded-xl p-4 image-preview-container" id="preview-container">
+                        <p class="text-center text-gray-500 py-4">प्रीव्यू के लिए एक छवि चुनें</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-16 md:py-24 px-6 md:px-12 lg:px-24 bg-secondary">
+        <div class="container mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center">हमारे कन्वर्टर को क्यों चुनें</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-md text-center feature-card">
+                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-bolt text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">तेज़ कन्वर्ज़न</h3>
+                    <p class="text-gray-600">हमारे अनुकूलित प्रोसेसिंग इंजन के साथ अपनी AVIF छवियों को सेकंडों में PNG
+                        प्रारूप में बदलें।</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-md text-center feature-card">
+                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-lock text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">100% सुरक्षित</h3>
+                    <p class="text-gray-600">आपकी फ़ाइलें आपके ब्राउज़र में स्थानीय रूप से प्रोसेस की जाती हैं। हम आपकी
+                        छवियों को किसी भी सर्वर पर अपलोड नहीं करते।</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-white p-8 rounded-2xl shadow-md text-center feature-card">
+                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-image text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">उच्च गुणवत्ता</h3>
+                    <p class="text-gray-600">हमारा कन्वर्टर रूपांतरण प्रक्रिया के दौरान सर्वोच्च संभव छवि गुणवत्ता बनाए
+                        रखता है।</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="py-16 md:py-24 px-6 md:px-12 lg:px-24">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">AVIF से PNG में कैसे बदलें</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-md text-center">
+                    <div class="bg-blue-50 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-primary font-bold text-xl">1</span>
+                    </div>
+                    <h3 class="font-bold mb-2">अपलोड करें</h3>
+                    <p class="text-gray-600">अपनी AVIF फ़ाइलों को खींचें और छोड़ें या अपने डिवाइस को ब्राउज़ करने के लिए
+                        क्लिक करें</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-md text-center">
+                    <div class="bg-blue-50 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-primary font-bold text-xl">2</span>
+                    </div>
+                    <h3 class="font-bold mb-2">कन्वर्ट करें</h3>
+                    <p class="text-gray-600">हमारा AVIF से PNG कन्वर्टर आपकी फ़ाइलों को आपके ब्राउज़र में तुरंत प्रोसेस
+                        करता है</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-md text-center">
+                    <div class="bg-blue-50 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-primary font-bold text-xl">3</span>
+                    </div>
+                    <h3 class="font-bold mb-2">डाउनलोड करें</h3>
+                    <p class="text-gray-600">अपनी कन्वर्ट की गई PNG फ़ाइलों को अलग-अलग या एक साथ डाउनलोड करें</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="py-16 md:py-24 px-6 md:px-12 lg:px-24 bg-gray-50">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">AVIF से PNG में बदलने के लाभ</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <h3 class="text-xl font-bold mb-4 text-primary">व्यापक संगतता</h3>
+                    <p class="text-gray-600">जबकि AVIF नया और अधिक कुशल है, PNG लगभग सभी सॉफ्टवेयर और प्लेटफॉर्म द्वारा
+                        समर्थित है। AVIF से PNG में बदलने से यह सुनिश्चित होता है कि आपकी छवियां हर जगह काम करें।</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <h3 class="text-xl font-bold mb-4 text-primary">लॉसलेस गुणवत्ता</h3>
+                    <p class="text-gray-600">हमारा AVIF से PNG कन्वर्टर रूपांतरण के दौरान छवि की गुणवत्ता बनाए रखता है,
+                        यह सुनिश्चित करता है कि आपके विज़ुअल स्पष्ट और साफ रहें।</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <h3 class="text-xl font-bold mb-4 text-primary">पारदर्शिता समर्थन</h3>
+                    <p class="text-gray-600">PNG प्रारूप पारदर्शिता का समर्थन करता है, जिससे यह लोगो, आइकन और ऐसी छवियों
+                        के लिए आदर्श है जिन्हें विभिन्न पृष्ठभूमियों पर रखने की आवश्यकता होती है।</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <h3 class="text-xl font-bold mb-4 text-primary">आसान संपादन</h3>
+                    <p class="text-gray-600">PNG फ़ाइलें अधिकांश ग्राफिक डिज़ाइन सॉफ्टवेयर में AVIF फ़ाइलों की तुलना में
+                        आसानी से संपादित की जा सकती हैं, जिससे आपको अपनी छवियों के साथ अधिक लचीलापन मिलता है।</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases Section -->
+    <section class="py-16 md:py-24 px-6 md:px-12 lg:px-24">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">AVIF से PNG कन्वर्टर का उपयोग कब करें</h2>
+
+            <div class="space-y-6">
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <h3 class="text-xl font-bold mb-2">वेबसाइट विकास</h3>
+                    <p class="text-gray-600">पुराने ब्राउज़रों का समर्थन करने वाली वेबसाइटें बनाते समय या पारदर्शी
+                        पृष्ठभूमि वाली छवियों की आवश्यकता होने पर AVIF को PNG में बदलें।</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <h3 class="text-xl font-bold mb-2">ग्राफिक डिज़ाइन</h3>
+                    <p class="text-gray-600">जब आप ऐसे डिज़ाइन सॉफ्टवेयर के साथ काम कर रहे हों जो AVIF प्रारूप का समर्थन
+                        नहीं करता है लेकिन उच्च गुणवत्ता वाली छवियों की आवश्यकता होती है, तब हमारे AVIF से PNG कन्वर्टर
+                        का उपयोग करें।</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <h3 class="text-xl font-bold mb-2">ई-कॉमर्स</h3>
+                    <p class="text-gray-600">विभिन्न प्लेटफॉर्म और डिवाइसों पर लगातार प्रदर्शित होने वाले उत्पाद छवियों
+                        के लिए AVIF से PNG में बदलें।</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <h3 class="text-xl font-bold mb-2">सोशल मीडिया</h3>
+                    <p class="text-gray-600">हमारा AVIF से PNG कन्वर्टर उन सोशल मीडिया प्लेटफॉर्म के लिए छवियों को तैयार
+                        करने में मदद करता है जो अभी तक AVIF प्रारूप का पूरी तरह से समर्थन नहीं कर सकते हैं।</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="py-16 md:py-24 px-6 md:px-12 lg:px-24 bg-gray-50">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">AVIF बनाम PNG: प्रारूप तुलना</h2>
+
+            <div class="overflow-hidden bg-white rounded-xl shadow-md">
+                <table class="w-full">
+                    <thead class="bg-primary text-white">
+                        <tr>
+                            <th class="py-4 px-6 text-left">विशेषता</th>
+                            <th class="py-4 px-6 text-center">AVIF</th>
+                            <th class="py-4 px-6 text-center">PNG</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200">
+                        <tr>
+                            <td class="py-4 px-6 font-medium">फ़ाइल आकार</td>
+                            <td class="py-4 px-6 text-center">छोटा</td>
+                            <td class="py-4 px-6 text-center">बड़ा</td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-6 font-medium">संगतता</td>
+                            <td class="py-4 px-6 text-center">सीमित</td>
+                            <td class="py-4 px-6 text-center">उत्कृष्ट</td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-6 font-medium">पारदर्शिता</td>
+                            <td class="py-4 px-6 text-center">समर्थित</td>
+                            <td class="py-4 px-6 text-center">पूरी तरह समर्थित</td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-6 font-medium">छवि गुणवत्ता</td>
+                            <td class="py-4 px-6 text-center">छोटे आकार में उच्च</td>
+                            <td class="py-4 px-6 text-center">लॉसलेस</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="text-center mt-6 text-gray-600">हमारा AVIF से PNG कन्वर्टर आपको दोनों दुनिया का सर्वश्रेष्ठ प्रदान
+                करता है - AVIF की स्पेस दक्षता और PNG की संगतता।</p>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-16 md:py-24 px-6 md:px-12 lg:px-24">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center">अक्सर पूछे जाने वाले प्रश्न</h2>
+
+            <div class="space-y-6">
+                <!-- FAQ Item 1 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <button class="faq-toggle w-full text-left p-6 focus:outline-none">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-xl font-medium">AVIF फ़ाइल क्या है?</h3>
+                            <i class="fas fa-chevron-down text-gray-400 transition-transform"></i>
+                        </div>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6">
+                        <p class="text-gray-600">AVIF (AV1 इमेज फ़ाइल फॉर्मेट) एक आधुनिक छवि प्रारूप है जो JPEG, PNG और
+                            WebP की तुलना में उच्च दृश्य गुणवत्ता बनाए रखते हुए फ़ाइल आकार में महत्वपूर्ण कमी प्रदान
+                            करता है। यह AV1 वीडियो कोडेक पर आधारित है।</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <button class="faq-toggle w-full text-left p-6 focus:outline-none">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-xl font-medium">AVIF को PNG में क्यों बदलें?</h3>
+                            <i class="fas fa-chevron-down text-gray-400 transition-transform"></i>
+                        </div>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6">
+                        <p class="text-gray-600">हालांकि AVIF बेहतर संपीड़न प्रदान करता है, PNG अधिक व्यापक रूप से
+                            एप्लिकेशन और प्लेटफॉर्म पर समर्थित है। PNG में बदलने से उन सॉफ्टवेयर के साथ संगतता सुनिश्चित
+                            होती है जो अभी तक नए AVIF प्रारूप का समर्थन नहीं करते हैं।</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <button class="faq-toggle w-full text-left p-6 focus:outline-none">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-xl font-medium">क्या फ़ाइल आकार की सीमा है?</h3>
+                            <i class="fas fa-chevron-down text-gray-400 transition-transform"></i>
+                        </div>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6">
+                        <p class="text-gray-600">हां, अधिकतम फ़ाइल आकार 10MB है। यह सीमा इष्टतम प्रदर्शन सुनिश्चित करने
+                            में मदद करती है क्योंकि सभी प्रोसेसिंग आपके ब्राउज़र में होती है।</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <button class="faq-toggle w-full text-left p-6 focus:outline-none">
+                        <div class="flex justify-between items-center">
+                            <h3 class="text-xl font-medium">क्या मेरा डेटा निजी है?</h3>
+                            <i class="fas fa-chevron-down text-gray-400 transition-transform"></i>
+                        </div>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-6">
+                        <p class="text-gray-600">बिल्कुल। सभी कन्वर्ज़न आपके ब्राउज़र में स्थानीय रूप से होता है। आपकी
+                            छवियां कभी भी किसी सर्वर पर अपलोड नहीं की जाती हैं, जिससे पूर्ण गोपनीयता और सुरक्षा
+                            सुनिश्चित होती है।</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 md:py-24 px-6 md:px-12 lg:px-24 bg-secondary">
+        <div class="container mx-auto max-w-4xl text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-8">AVIFtoPNG के बारे में</h2>
+            <p class="text-lg text-gray-600 mb-10">
+                AVIFtoPNG एक मुफ्त ऑनलाइन टूल है जिसे छवि प्रारूप रूपांतरण को सरल और सभी के लिए सुलभ बनाने के लिए
+                डिज़ाइन किया गया है।
+                हमने इस टूल को AVIF जैसे नए छवि प्रारूपों के साथ काम करते समय उत्पन्न होने वाली संगतता समस्याओं को हल
+                करने के लिए बनाया है।
+                हमारा मिशन बिना किसी तकनीकी बाधा के तेज़, सुरक्षित और उच्च गुणवत्ता वाला छवि रूपांतरण प्रदान करना है।
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-8 px-6 md:px-12 lg:px-24">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <a href="/hi/" class="text-xl font-bold text-primary mb-2 inline-block"
+                        title="AVIF to PNG">AVIFtoPNG</a>
+                    <p class="text-gray-400 text-sm">© 2025 AVIFtoPNG. सर्वाधिकार सुरक्षित।</p>
+                </div>
+
+                <!-- 页面导航链接 -->
+                <div class="flex justify-center space-x-4">
+                    <a href="/hi/privacy.html" class="text-primary hover:underline" title="गोपनीयता नीति">गोपनीयता
+                        नीति</a>
+                    <a href="/hi/terms.html" class="text-primary hover:underline" title="सेवा की शर्तें">सेवा की
+                        शर्तें</a>
+                    <a href="/hi/contact.html" class="text-primary hover:underline" title="हमसे संपर्क करें">हमसे संपर्क
+                        करें</a>
+                </div>
+
+                <!-- सोशल मीडिया शेयरिंग -->
+                <div class="flex flex-col items-center md:items-end">
+                    <div class="flex flex-wrap gap-2">
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=https://aviftopng.com" target="_blank"
+                            rel="noopener noreferrer"
+                            class="bg-[#1877F2] hover:bg-[#166fe5] text-white text-xs px-3 py-1 rounded-full transition-colors inline-flex items-center">
+                            <i class="fab fa-facebook-f mr-1"></i> शेयर करें
+                        </a>
+                        <a href="https://twitter.com/intent/tweet?text=इस%20मुफ्त%20ऑनलाइन%20टूल%20से%20AVIF%20को%20PNG%20में%20तुरंत%20बदलें!&url=https://aviftopng.com"
+                            target="_blank" rel="noopener noreferrer"
+                            class="bg-[#1DA1F2] hover:bg-[#1a8cd8] text-white text-xs px-3 py-1 rounded-full transition-colors inline-flex items-center">
+                            <i class="fab fa-twitter mr-1"></i> ट्वीट करें
+                        </a>
+                        <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://aviftopng.com&title=मुफ्त%20AVIF%20से%20PNG%20कनवर्टर"
+                            target="_blank" rel="noopener noreferrer"
+                            class="bg-[#0A66C2] hover:bg-[#094ea0] text-white text-xs px-3 py-1 rounded-full transition-colors inline-flex items-center">
+                            <i class="fab fa-linkedin-in mr-1"></i> शेयर करें
+                        </a>
+                        <a href="https://pinterest.com/pin/create/button/?url=https://aviftopng.com&description=मुफ्त%20AVIF%20से%20PNG%20कनवर्टर"
+                            target="_blank" rel="noopener noreferrer"
+                            class="bg-[#E60023] hover:bg-[#cc0000] text-white text-xs px-3 py-1 rounded-full transition-colors inline-flex items-center">
+                            <i class="fab fa-pinterest-p mr-1"></i> पिन करें
+                        </a>
+                        <a href="https://api.whatsapp.com/send?text=इस%20मुफ्त%20AVIF%20से%20PNG%20कनवर्टर%20को%20देखें:%20https://aviftopng.com"
+                            target="_blank" rel="noopener noreferrer"
+                            class="bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs px-3 py-1 rounded-full transition-colors inline-flex items-center">
+                            <i class="fab fa-whatsapp mr-1"></i> शेयर करें
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../script.js"></script>
+    <script src="../share.js"></script>
+</body>
+
+</html>
+</body>
+
+</html>

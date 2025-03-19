@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us | AVIF to PNG Converter</title>
-    <meta name="description" content="Contact the AVIF to PNG Converter team for support, feedback, or business inquiries.">
+    <meta name="description"
+        content="Contact the AVIF to PNG Converter team for support, feedback, or business inquiries.">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
@@ -25,16 +27,35 @@
         }
     </script>
 </head>
+
 <body class="bg-white font-sans text-dark">
     <!-- Header -->
     <header class="bg-secondary py-4 px-6 md:px-12 lg:px-24">
         <div class="container mx-auto flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-bold text-primary">AVIF2PNG</a>
+            <a href="index.html" class="text-2xl font-bold text-primary">AVIFtoPNG</a>
             <nav>
                 <ul class="flex space-x-6">
                     <li><a href="index.html" class="hover:text-primary transition-colors">Home</a></li>
-                    <li><a href="index.html#about" class="hover:text-primary transition-colors">About</a></li>
-                    <li><a href="index.html#faq" class="hover:text-primary transition-colors">FAQ</a></li>
+                    <li class="relative group">
+                        <button class="hover:text-primary transition-colors flex items-center" title="Choose Language">
+                            <i class="fas fa-globe mr-1"></i> Language <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </button>
+                        <div
+                            class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 hidden group-hover:block z-10 transition-all duration-300 opacity-0 group-hover:opacity-100 invisible group-hover:visible">
+                            <!-- 添加一个透明的桥接元素，扩大悬停区域 -->
+                            <div class="absolute -top-2 left-0 right-0 h-2 bg-transparent"></div>
+                            <a href="/contact.html" class="block px-4 py-2 hover:bg-gray-100">English</a>
+                            <a href="/hi/contact.html" class="block px-4 py-2 hover:bg-gray-100">हिन्दी</a>
+                            <a href="/pt/contact.html" class="block px-4 py-2 hover:bg-gray-100">Português</a>
+                            <a href="/id/contact.html" class="block px-4 py-2 hover:bg-gray-100">Bahasa Indonesia</a>
+                            <a href="/tl/contact.html" class="block px-4 py-2 hover:bg-gray-100">Filipino</a>
+                            <a href="/fr/contact.html" class="block px-4 py-2 hover:bg-gray-100">Français</a>
+                            <a href="/zh-cn/contact.html" class="block px-4 py-2 hover:bg-gray-100">简体中文</a>
+                            <a href="/zh-tw/contact.html" class="block px-4 py-2 hover:bg-gray-100">繁體中文</a>
+                            <a href="/ur/contact.html" class="block px-4 py-2 hover:bg-gray-100">اردو</a>
+                            <a href="/tr/contact.html" class="block px-4 py-2 hover:bg-gray-100">Türkçe</a>
+                        </div>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -44,128 +65,78 @@
     <section class="py-12 md:py-16 px-6 md:px-12 lg:px-24">
         <div class="container mx-auto max-w-4xl">
             <h1 class="text-3xl md:text-4xl font-bold mb-8 text-center">Contact Us</h1>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+            <div class="container mx-auto max-w-3xl">
                 <!-- Contact Information -->
-                <div class="bg-white rounded-2xl shadow-lg p-8 md:p-10">
-                    <h2 class="text-2xl font-bold mb-6">Get in Touch</h2>
-                    
-                    <div class="space-y-6">
-                        <div class="flex items-start">
-                            <div class="bg-blue-100 p-3 rounded-full mr-4">
-                                <i class="fas fa-envelope text-primary"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-medium mb-1">Email Us</h3>
-                                <p class="text-gray-600">support@avif2png.com</p>
-                                <p class="text-sm text-gray-500 mt-1">We'll respond within 24 hours</p>
-                            </div>
+                <div class="bg-white rounded-2xl shadow-lg p-8 md:p-12">
+                    <h2 class="text-2xl font-bold mb-8 text-center">Contact Us</h2>
+
+                    <!-- Main Email Contact -->
+                    <div class="text-center mb-12">
+                        <div class="inline-block bg-blue-100 p-4 rounded-full mb-4">
+                            <i class="fas fa-envelope text-primary text-2xl"></i>
                         </div>
-                        
-                        <div class="flex items-start">
-                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                        <h3 class="text-xl font-medium mb-2">Email Us</h3>
+                        <a href="mailto:support@aviftopng.com" class="text-primary text-lg hover:underline">
+                            support@aviftopng.com
+                        </a>
+                        <p class="text-gray-500 mt-2">We'll respond within 24 hours</p>
+                    </div>
+
+                    <!-- Other Contact Methods -->
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="bg-gray-50 rounded-xl p-6 text-center">
+                            <div class="inline-block bg-blue-100 p-3 rounded-full mb-3">
                                 <i class="fas fa-comment-alt text-primary"></i>
                             </div>
-                            <div>
-                                <h3 class="font-medium mb-1">Live Chat</h3>
-                                <p class="text-gray-600">Available Monday-Friday</p>
-                                <p class="text-sm text-gray-500 mt-1">9:00 AM - 5:00 PM EST</p>
-                            </div>
+                            <h3 class="font-medium mb-2">Live Chat</h3>
+                            <p class="text-gray-600">Get real-time support</p>
+                            <a href="mailto:support@aviftopng.com"
+                                class="text-primary hover:underline text-sm block mt-2">Start Chat</a>
                         </div>
-                        
-                        <div class="flex items-start">
-                            <div class="bg-blue-100 p-3 rounded-full mr-4">
-                                <i class="fas fa-map-marker-alt text-primary"></i>
+
+                        <div class="bg-gray-50 rounded-xl p-6 text-center">
+                            <div class="inline-block bg-blue-100 p-3 rounded-full mb-3">
+                                <i class="fas fa-lightbulb text-primary"></i>
                             </div>
-                            <div>
-                                <h3 class="font-medium mb-1">Location</h3>
-                                <p class="text-gray-600">San Francisco, CA</p>
-                                <p class="text-sm text-gray-500 mt-1">United States</p>
-                            </div>
+                            <h3 class="font-medium mb-2">Suggestions</h3>
+                            <p class="text-gray-600">Help us improve</p>
+                            <a href="mailto:support@aviftopng.com"
+                                class="text-primary hover:underline text-sm block mt-2">Share Ideas</a>
                         </div>
                     </div>
-                    
-                    <div class="mt-10">
-                        <h3 class="font-medium mb-4">Follow Us</h3>
-                        <div class="flex space-x-4">
-                            <a href="#" class="bg-gray-100 hover:bg-blue-100 p-3 rounded-full transition-colors">
-                                <i class="fab fa-twitter text-gray-600 hover:text-primary"></i>
+
+                    <!-- Social Media Links -->
+                    <div class="mt-12 text-center">
+                        <h3 class="font-medium mb-4">Share with Friends</h3>
+                        <div class="flex justify-center space-x-4">
+                            <a href="https://twitter.com/intent/tweet?text=Convert%20AVIF%20to%20PNG%20instantly%20with%20this%20free%20online%20tool!&url=https://aviftopng.com"
+                                target="_blank" rel="noopener noreferrer"
+                                class="bg-[#1DA1F2] hover:bg-[#1a8cd8] p-4 rounded-full transition-colors group">
+                                <i class="fab fa-twitter text-white text-xl"></i>
+                                <span class="sr-only">Share on Twitter</span>
                             </a>
-                            <a href="#" class="bg-gray-100 hover:bg-blue-100 p-3 rounded-full transition-colors">
-                                <i class="fab fa-github text-gray-600 hover:text-primary"></i>
+                            <a href="https://www.facebook.com/sharer/sharer.php?u=https://aviftopng.com" target="_blank"
+                                rel="noopener noreferrer"
+                                class="bg-[#1877F2] hover:bg-[#166fe5] p-4 rounded-full transition-colors group">
+                                <i class="fab fa-facebook-f text-white text-xl"></i>
+                                <span class="sr-only">Share on Facebook</span>
                             </a>
-                            <a href="#" class="bg-gray-100 hover:bg-blue-100 p-3 rounded-full transition-colors">
-                                <i class="fab fa-linkedin text-gray-600 hover:text-primary"></i>
+                            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://aviftopng.com&title=Free%20AVIF%20to%20PNG%20Converter&summary=Convert%20AVIF%20images%20to%20PNG%20format%20easily"
+                                target="_blank" rel="noopener noreferrer"
+                                class="bg-[#0A66C2] hover:bg-[#094ea0] p-4 rounded-full transition-colors group">
+                                <i class="fab fa-linkedin-in text-white text-xl"></i>
+                                <span class="sr-only">Share on LinkedIn</span>
                             </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Contact Form -->
-                <div class="bg-white rounded-2xl shadow-lg p-8 md:p-10">
-                    <h2 class="text-2xl font-bold mb-6">Send a Message</h2>
-                    
-                    <!-- 添加表单验证属性以增强用户体验 -->
-                    <form id="contact-form" class="space-y-6">
-                        <div>
-                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
-                            <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-colors" required minlength="2" maxlength="50">
-                        </div>
-                        
-                        <div>
-                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
-                            <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-colors" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
-                        </div>
-                        
-                        <div>
-                            <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
-                            <select id="subject" name="subject" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-colors">
-                                <option value="general">General Inquiry</option>
-                                <option value="support">Technical Support</option>
-                                <option value="feedback">Feedback</option>
-                                <option value="business">Business Proposal</option>
-                            </select>
-                        </div>
-                        
-                        <div>
-                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
-                            <textarea id="message" name="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-colors resize-none" required></textarea>
-                        </div>
-                        
-                        <div class="flex items-center">
-                            <input type="checkbox" id="privacy" name="privacy" class="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded" required>
-                            <label for="privacy" class="ml-2 block text-sm text-gray-700">
-                                I agree to the <a href="privacy.html" class="text-primary hover:underline">Privacy Policy</a>
-                            </label>
-                        </div>
-                        
-                        <button type="submit" class="w-full bg-primary text-white py-3 px-6 rounded-lg hover:bg-blue-600 transition-colors font-medium">
-                            Send Message
-                        </button>
-                    </form>
-                    
-                    <!-- 在页面底部添加加载指示器 -->
-                    <div id="loading-indicator" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-                        <div class="bg-white p-5 rounded-lg flex items-center">
-                            <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mr-3"></div>
-                            <p>发送中...</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Success Message (Initially Hidden) -->
-                    <div id="success-message" class="hidden mt-6 p-4 bg-green-100 text-green-700 rounded-lg">
-                        <div class="flex items-center">
-                            <i class="fas fa-check-circle mr-2"></i>
-                            <p>Your message has been sent successfully. We'll get back to you soon!</p>
                         </div>
                     </div>
                 </div>
             </div>
-            
+
             <!-- FAQ Section -->
             <div class="mt-16">
                 <h2 class="text-2xl font-bold mb-6 text-center">Frequently Asked Questions</h2>
-                
+
                 <div class="space-y-4">
                     <div class="bg-white rounded-xl shadow-md overflow-hidden">
                         <button class="faq-toggle w-full text-left p-5 focus:outline-none">
@@ -175,10 +146,11 @@
                             </div>
                         </button>
                         <div class="faq-content hidden px-5 pb-5">
-                            <p class="text-gray-600">We typically respond to all inquiries within 24 hours during business days. For urgent matters, please indicate this in your subject line.</p>
+                            <p class="text-gray-600">We typically respond to all inquiries within 24 hours during
+                                business days. For urgent matters, please indicate this in your subject line.</p>
                         </div>
                     </div>
-                    
+
                     <div class="bg-white rounded-xl shadow-md overflow-hidden">
                         <button class="faq-toggle w-full text-left p-5 focus:outline-none">
                             <div class="flex justify-between items-center">
@@ -187,10 +159,12 @@
                             </div>
                         </button>
                         <div class="faq-content hidden px-5 pb-5">
-                            <p class="text-gray-600">Yes, we offer custom development services for businesses that need specialized image conversion solutions. Please contact us with your requirements for a quote.</p>
+                            <p class="text-gray-600">Yes, we offer custom development services for businesses that need
+                                specialized image conversion solutions. Please contact us with your requirements for a
+                                quote.</p>
                         </div>
                     </div>
-                    
+
                     <div class="bg-white rounded-xl shadow-md overflow-hidden">
                         <button class="faq-toggle w-full text-left p-5 focus:outline-none">
                             <div class="flex justify-between items-center">
@@ -199,7 +173,9 @@
                             </div>
                         </button>
                         <div class="faq-content hidden px-5 pb-5">
-                            <p class="text-gray-600">We welcome your feedback! Please use the contact form and select "Feedback" as the subject. Describe the bug or feature request in detail, and we'll review it promptly.</p>
+                            <p class="text-gray-600">We welcome your feedback! Please use the contact form and select
+                                "Feedback" as the subject. Describe the bug or feature request in detail, and we'll
+                                review it promptly.</p>
                         </div>
                     </div>
                 </div>
@@ -212,10 +188,10 @@
         <div class="container mx-auto">
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="mb-6 md:mb-0">
-                    <a href="index.html" class="text-xl font-bold text-primary mb-2 inline-block">AVIF2PNG</a>
-                    <p class="text-gray-400 text-sm">© 2023 AVIF2PNG. All rights reserved.</p>
+                    <a href="index.html" class="text-xl font-bold text-primary mb-2 inline-block">AVIFtoPNG</a>
+                    <p class="text-gray-400 text-sm">© 2025 AVIFtoPNG. All rights reserved.</p>
                 </div>
-                
+
                 <!-- 页面导航链接 -->
                 <div class="flex flex-wrap justify-center space-x-4 mb-6 md:mb-0">
                     <a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a>
@@ -223,27 +199,35 @@
                     <a href="terms.html" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a>
                     <a href="contact.html" class="text-gray-400 hover:text-white transition-colors">Contact Us</a>
                 </div>
-                
-                <!-- 社交媒体分享 -->
+
+                <!-- Social Media Sharing -->
                 <div class="flex flex-col items-center md:items-end">
-                    <div class="flex space-x-4 mb-3">
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="Twitter">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="GitHub">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors" aria-label="LinkedIn">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                    </div>
-                    <div class="flex space-x-2">
-                        <button class="share-btn bg-gray-700 hover:bg-gray-600 text-white text-xs px-3 py-1 rounded-full transition-colors" data-platform="facebook">
+                    <div class="flex flex-wrap gap-2">
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=https://aviftopng.com" target="_blank"
+                            rel="noopener noreferrer"
+                            class="bg-[#1877F2] hover:bg-[#166fe5] text-white text-xs px-3 py-1 rounded-full transition-colors inline-flex items-center">
                             <i class="fab fa-facebook-f mr-1"></i> Share
-                        </button>
-                        <button class="share-btn bg-gray-700 hover:bg-gray-600 text-white text-xs px-3 py-1 rounded-full transition-colors" data-platform="twitter">
+                        </a>
+                        <a href="https://twitter.com/intent/tweet?text=Convert%20AVIF%20to%20PNG%20instantly%20with%20this%20free%20online%20tool!&url=https://aviftopng.com"
+                            target="_blank" rel="noopener noreferrer"
+                            class="bg-[#1DA1F2] hover:bg-[#1a8cd8] text-white text-xs px-3 py-1 rounded-full transition-colors inline-flex items-center">
                             <i class="fab fa-twitter mr-1"></i> Tweet
-                        </button>
+                        </a>
+                        <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://aviftopng.com&title=Free%20AVIF%20to%20PNG%20Converter"
+                            target="_blank" rel="noopener noreferrer"
+                            class="bg-[#0A66C2] hover:bg-[#094ea0] text-white text-xs px-3 py-1 rounded-full transition-colors inline-flex items-center">
+                            <i class="fab fa-linkedin-in mr-1"></i> Share
+                        </a>
+                        <a href="https://pinterest.com/pin/create/button/?url=https://aviftopng.com&description=Free%20AVIF%20to%20PNG%20Converter"
+                            target="_blank" rel="noopener noreferrer"
+                            class="bg-[#E60023] hover:bg-[#cc0000] text-white text-xs px-3 py-1 rounded-full transition-colors inline-flex items-center">
+                            <i class="fab fa-pinterest-p mr-1"></i> Pin
+                        </a>
+                        <a href="https://api.whatsapp.com/send?text=Check%20out%20this%20free%20AVIF%20to%20PNG%20converter:%20https://aviftopng.com"
+                            target="_blank" rel="noopener noreferrer"
+                            class="bg-[#25D366] hover:bg-[#20bd5a] text-white text-xs px-3 py-1 rounded-full transition-colors inline-flex items-center">
+                            <i class="fab fa-whatsapp mr-1"></i> Share
+                        </a>
                     </div>
                 </div>
             </div>
@@ -252,4 +236,5 @@
     <script src="script.js"></script>
     <script src="share.js"></script>
 </body>
+
 </html>
